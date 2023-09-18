@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data bind</title>
+    <script src="vue274.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+
+        <input type="text" v-model="username" name="username">
+
+        <h1>{{username}}</h1>
+
+
+    </div>
+
+
+
+    <script text="text/script">
+
+        /*
+        *    v-model 只能应用于在表单类，或是这个标答有value属性才可以 ;
+        *    
+        */
+
+
+        Vue.config.productionTip = false;
+
+
+        const vm =  new Vue({
+            data: {
+                username: ''
+            }
+
+        });
+        //使用mount方式，和el构造器参数基本一致，只是后一种灵活一点点，比如延迟1秒
+        setTimeout(()=>vm.$mount("#app"),10000);
+     
+        console.log(vm);
+    </script>
+</body>
+
+</html>

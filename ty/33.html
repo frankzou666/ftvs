@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hhh</title>
+    <script src="vue274.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="username" name="username">
+
+        <!--这个username处，js 表达式或js语句，比如username是一个js变量，而1+1或Date.now()就是表达式-->
+        <h1>{{username}}</h1>
+        <h1>{{1+1}}</h1>
+
+    </div>
+
+   
+
+    <script text="text/script">
+        //关闭vue的提示
+        Vue.config.productionTip = false
+
+        //Vue构造函数，只传入一个参数，这个参数就是一个配置对像
+        // 配置对像格式是  {key: value,}
+        new Vue({
+            el:"#app",  //通过为CSS选择器
+            data:{
+                username:''
+            }
+
+        })
+    </script>
+</body>
+</html>
+
