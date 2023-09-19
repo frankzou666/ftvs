@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch02</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+         $(function() {
+            //如何传参？
+            // $(".mainLink").click(
+            //    printEvent
+            // )
+            var node = $("#toGoogleLi");
+            var nodeParent = node.parent();
+            var nodeChildren = node.children();
+            var nodeSiblings = node.siblings();
+            var nodePrevall = node.prevAll();
+            var nodeNextall = node.nextAll();
+            //myself
+            console.log(node.html());
+            console.log(nodeParent.html());
+            console.log(nodeChildren.html());
+            console.log(nodeSiblings.html());
+            console.log(nodePrevall.html());
+            console.log(nodeNextall.html());
+            for(var i=0;i<nodeNextall.length;i++) {
+                console.log(nodeNextall[i]);
+            }
+            
+
+
+
+
+
+         })
+
+        //out put the event
+        function printEvent($event){
+            //把一个普通的节点或是元素包装成jquery对像
+            var node = $(this);
+            //在一个选择器，存在多个属性时，用来看是否包含另一个属性，也是选择器
+            //console.log(node.is(".mainLink"));
+
+
+        } ;
+
+
+    </script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+            <ul>
+            <li id="toGoogleLi"><a id="toGoogle" class="mainLink" href="#">to Google</a></li>
+            <li><a id="toBBC" class="mainLink"    href="#">to BBC</a></li>
+            <li><a id="toCNN" class="mainLink"    href="#">to CNN</a></li>
+            </ul>
+
+    </div>
+    
+    
+</body>
+</html>
