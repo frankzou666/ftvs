@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: azure;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        #root{
+            height: 100%;
+            
+            
+        }
+        #divList{
+           
+            display: grid;
+            grid-template-areas:
+                 "h h h h"
+                 "l c c r"
+                 "l f f f";
+
+        }
+
+        #div1{
+      
+            background: red;
+        }
+        #div2{
+            
+            background: blue;
+        }
+        #div3{
+             
+            background: green;
+        }
+
+        #mainContent{
+            height: 100%;
+            display: grid;
+            grid-template-columns: 15% 85%;
+        }
+        #aside{
+            background-color: aqua;
+        }
+
+        #content{
+            background-color:blueviolet
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div id="divList"> 
+            <div id="div1">div1</div>
+            
+            <div id="div3">div3</div>
+            <div id="div3">div3</div>
+            <div id="div3">div3</div>
+            <div id="div2">div2</div>
+        </div>
+
+        <div id="mainContent"> 
+            <div id="aside">
+                aside
+                <div id="aside">aside</div>
+                <div id="aside">aside</div>
+                <div id="aside">aside</div>
+            </div>
+            <div id="content">content
+                <div>content1</div>
+                <div>content1</div>
+                <div>content1</div>
+            </div>
+        </div>
+
+
+
+    </div>
+   
+
+    
+    
+</body>
+</html>

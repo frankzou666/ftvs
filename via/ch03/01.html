@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch03</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        #app{
+            width: 94%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        .navbar{
+            border-radius: 10px;
+        }
+        #dataTable {
+            margin-top: 6px;
+        }
+        
+        .main{
+            width: 80%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+               <h1>导航</h1>
+            </div>
+            <button class="btn btn-outline-primary" @click="displayData">{{btnText}}</button>
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" >增加</button>
+            <div class="modal fade" id="exampleModal"> 
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    </div>
+                    <div class="modal-body">
+                        <h5 >New message1</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+
+                </div>
+                
+
+            </div>
+
+            <!--
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            -->  
+        </nav>
+
+        <!--<input type="text" name="msg" v-model="msg"> -->
+        <div class="main" id="dataTableDiv">
+            <table v-if="tableShow" id="dataTable" class="table table-hover table-bordered" >
+                <tr><th>ID</th><th>NAME</th><th>删  除</th></tr>
+                <tr v-for="item in cart" :key="item.id">
+                    <td>{{item.id}}</td><td>{{item.name}}</td><td>
+                    <button  v-on:click="delData(item.id)" class="btn btn-danger">删除</button></td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+           data:{
+               msg:"hello",
+               //define a array
+               cart: [
+                {id:1,name:"apple"},
+                {id:2,name:"orangle"},
+                {id:3,name:"banana"},
+               ],
+               tableShow:false,
+               btnText: "显示"
+           },
+           methods: {
+               displayData: function() {
+                   this.tableShow = this.tableShow?false:true;
+                   this.btnText = (this.btnText==="显示")?"隐藏":"显示";
+               },
+               delData: function(id) {
+                   for(var i=0;i<this.cart.length;i++){
+                        if (this.cart[i].id == id){
+                            //remove a element
+                            this.cart.splice(i,1);
+                        };
+                   }
+               },
+           },
+           
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+</html>

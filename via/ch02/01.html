@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+    <style>
+        #app {
+            width: 30%;
+            margin: 5% auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="msg" v-model="msg">
+        <button class="btn btn-primary" >click me</button>
+        <p>{{msg}}</p>
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = true;
+        const vm = new Vue({
+           data:{
+               msg:"hello",
+           },
+           beforeUpdate() {
+               //alert("before update");
+            
+           },
+
+           updated(){
+               //alert("vue updated");
+           },
+        });
+        Vue.config.productionTip = true;
+        vm.$mount("#app");
+    </script>
+</body>
+</html>

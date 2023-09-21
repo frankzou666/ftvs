@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch13</title>
+     <style>
+        div {
+            animation-name: change_bgcolor, bg-shift;
+            animation-duration: 5000ms;
+            animation-iteration-count: 10;
+        }
+       @keyframes bg-shift {
+       35% {background-color: orange;}
+       55% {background-color: red;}
+       65% {background-color: purple;}
+       }
+       @keyframes change_bgcolor {
+        0%, 100% {background-color: yellow;}
+        45% {background-color: green;}
+         55% {background-color: blue;}
+       }  
+     </style>
+</head>
+<body>
+    <div>div</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="../vue274.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        <label>请输入:</label>
+        <input type="text" v-model="inputValueX" name="inputValueX">
+        <select v-model="operationType" name="operationType">
+            <option value="+" selected="selected">&nbsp;+&nbsp;</option>
+            <option value="-">&nbsp;-&nbsp;</option>
+            <option value="*">&nbsp;*&nbsp;</option>
+            <option value="/">&nbsp;/&nbsp;</option>
+        </select>
+        <input type="text" v-model="inputValueY" name="inputValueY">
+        <input type="button" v-on:click="calResult" value="计算">
+        
+        <p>结果:{{result}}</p>
+        <p style="color: red;">{{msg}}</p>
+
+    </div>
+    
+    <script>
+        //判断是否数字
+        function isNotNum(value){
+            return isNaN(value) || !isFinite(value);
+        };
+
+        const vm= new Vue({
+            el:"#app",
+            data:{
+                inputValueX: 0,
+                inputValueY: 0,
+                operationType : '+',
+                result : 0,
+                msg:""
+  
+            },
+            methods: {
+                calResult:function() {
+
+                    if (isNotNum(this.inputValueX) || isNotNum(this.inputValueY)) {
+                       this.msg = "不是有效的数字";
+                       this.result = 0;
+                       return;
+                    }
+                    switch(this.operationType) {
+                        case ("+") :{
+                            this.result = parseFloat(this.inputValueX) +  parseFloat(this.inputValueY);
+                            this.msg = "";
+                            break;
+                        }
+
+                        case ("-") :{
+                            this.result = parseFloat(this.inputValueX) -  parseFloat(this.inputValueY);
+                            this.msg = "";
+                            break;
+                        }
+
+                        case ("*") :{
+                            this.result = parseFloat(this.inputValueX) * parseFloat(this.inputValueY);
+                            this.msg = "";
+                            break;
+                        }
+                        case ("/") :{
+                            this.result = parseFloat(this.inputValueX) / parseFloat(this.inputValueY);
+                            this.msg = "";
+                            break;
+                        }
+
+                    };
+
+        
+                }
+            }
+
+        });
+
+        vm.$mount();
+    </script>
+</body>
+</html>
