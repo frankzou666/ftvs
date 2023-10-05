@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdwjtmp</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+        $(function () {
+            //get boot
+            $("#getBook").on("click",function(event) {
+                event.preventDefault;
+                $.ajax({
+                    method:"get",
+                    url:"http://127.0.0.1:8084/api/book/"
+                }).done(function(data) {
+                    $("#bookTable").remove();
+                    var elTable= '<table id="bookTable" border=1 cellpadding="0" cellspacing="0"> \
+                                      <tr><th>title</th><th>author</th><th>price</th></tr> \
+                                  </table>';
+                    $("#mainContent").append(elTable);
+                    
+                    /*
+                    for(var i=0;i<data.length;i++){
+                        var tdTitle="<td>"+ data[i].title+"</td>";
+                        var tdAuthor="<td>"+data[i].author+"</td>";
+                        var tdPrice="<td>"+ data[i].price+"</td>";
+                        var trData = "<tr>"+tdTitle+tdAuthor+tdPrice+"</tr>";
+                        $("#bookTable").append(trData);
+                    }
+                    */
+                   //use $.each ,每次循环对像，可以通过this获取，data是一个数组
+                   $(data).each(function(){
+                        var tdTitle="<td>"+ this.title+"</td>";
+                        var tdAuthor="<td>"+this.author+"</td>";
+                        var tdPrice="<td class=price>"+ this.price+"</td>";
+                        var trData = "<tr>"+tdTitle+tdAuthor+tdPrice+"</tr>";
+                        $("#bookTable").append(trData);
+                        
+                        //有price class就加多一个class
+                        //$("#bookTable tbody tr td").filter("td.price").addClass("firstTd").end();
+                        // 如果仅是标签，通过$()来包装为一个jquery类
+                        $("#bookTable tbody tr td").each(function() {
+                            if ($(this).text()=="oracle"){
+                                //$(this).addClass("importBook");
+                                //注意"-" 去掉，然后改字母为大写
+                                $(this).css({backgroundColor:"red"});
+                            };
+                        })
+                        
+
+
+                       
+                   })
+                    
+                });
+
+            });
+
+            
+
+            //add book
+            $("#addBook").on("click",function(event){
+                event.preventDefault();
+                var data ={
+                    title:$("#bookTitle").val(),
+                    price:$("#bookPrice").val(),
+                    author:$("#bookAuthor").val()
+                };
+                //ajax post请求，json数据格式
+                $.ajax({
+                    method:"post",
+                    contentType:"application/json",
+                    data: JSON.stringify(data),
+                    url:"http://127.0.0.1:8084/api/book/"
+                }).done(function(data) {
+                    $("#bookTitle").val("");
+                    $("#bookPrice").val("");
+                    $("#bookAuthor").val("");
+                    //手动触发一个事件
+                    $("#getBook").trigger("click");
+                    
+                });
+            })
+        })
+
+
+
+
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .redBg {
+            background-color: red;
+        }
+
+        .greenBg {
+            background-color: green
+        }
+        #bookTable{
+            margin-top: 2%;
+            margin-left: 10%;
+        }
+        .importBook{
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="mainContent" class="container">
+        <input type="text" id="bookTitle" name="bookTitle" placeholder="title">
+        <input type="text" id="bookPrice" name="bookPrice" placeholder="price">
+        <input type="text" id="bookAuthor" name="bookAuthor" placeholder="author">
+        <a id="getBook" href="#">查询书本</a>
+        <a id="addBook" href="#">增加书本</a>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue bootstrap template</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        #app{
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        .navbar{
+            border-radius: 10px;
+        }
+        
+        .main{
+            width: 80%;
+            margin: 0px auto;
+        }
+      
+        #commitBtn{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+               <h1>导航</h1>
+            </div>
+        </nav>
+        
+        <div class="main" id="mainDiv">
+            <form class="col-md-12">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <strong>Username:</strong>
+                        <input class="form-control"   type="text" id="username">
+                    </div>
+                    <div class="form-group col-md-4 col-md-offset-0">
+                        <div class="">
+                            <strong>Password:</strong>
+                            <input class="form-control"   type="text" id="password">
+    
+                        </div>
+                        
+                    </div>
+
+                </div>
+               
+                
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <button id="commitBtn" @click="commitBtnCommit" type="button" class="btn btn-outline-primary">commit</button>
+                    </div>
+                    
+                </div>
+
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+               
+                 
+                
+            </form>
+  
+        </div>
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+           data:{
+           },
+           methods: {
+            commitBtnCommit(event){
+                console.log(event);
+                console.log(this);
+            }
+            
+           },
+           
+        });
+        vm.$mount("#app");
+    </script>
+
+
+    
+</body>
+
+
+</html>

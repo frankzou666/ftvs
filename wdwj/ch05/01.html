@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0501</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+        $(function () {
+            //$.makeArray把对像变为一个array
+            var data = "hello data";
+            console.log(typeof(data));
+            console.log($.makeArray(data));
+            console.log(typeof($.makeArray(data)));
+            console.log(($.makeArray(data)) instanceof Array);
+        
+        
+        })
+
+
+
+
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .redBg {
+            background-color: red;
+        }
+
+        .greenBg {
+            background-color: green
+        }
+        #bookTable{
+            margin-top: 2%;
+            margin-left: 10%;
+        }
+        .importBook{
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="mainContent" class="container">
+        <input type="text" id="bookTitle" name="bookTitle" placeholder="title">
+        <input type="text" id="bookPrice" name="bookPrice" placeholder="price">
+        <input type="text" id="bookAuthor" name="bookAuthor" placeholder="author">
+        <a id="getBook" href="#">查询书本</a>
+        <a id="addBook" href="#">增加书本</a>
+    </div>
+
+</body>
+
+</html>

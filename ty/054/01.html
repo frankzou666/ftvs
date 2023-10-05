@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ty</title>
+    <!--load Bootstrap-->
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+       
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <school></school>
+
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = false;
+
+        //定义组件
+        const school = Vue.extend({
+            //在组件中的定义的,也要用一个div包起来，在 vue中写任何html都要注意
+            template:`
+                 <div>
+                    <h1>{{name}}</h1>
+                    <button v-on:click="showName()">show me</button>
+                 </div>
+             `,
+            props:{
+                
+            },
+            //组件里的data,一定要用函数的方式
+            data(){
+                return {
+                    name: "java home",
+                    address: "beijin"
+                }
+
+            },
+            methods:{
+                showName(){
+                    alert(this.name);
+                }
+            }
+        })
+        
+        //全局注册
+        Vue.component("school",school);
+        //挂载根实例
+        //引入组件
+        const vm = new Vue({
+           data:{
+           },
+
+           //注册组件,key指组件名。
+           //components: {
+           //   school: school
+           //}
+           
+           
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ty</title>
+    <!--load Bootstrap-->
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+       
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = false;
+        const Demo = function(){
+            this.a=1;
+            this.b=2;
+        };
+        const demo = new Demo();
+        console.log(Demo.prototype);
+        console.log(demo.__proto__);        
+    </script>
+</body>
+</html>

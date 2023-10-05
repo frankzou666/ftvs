@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdwjtmpch08</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+         $(function() {
+            /*
+            $("#rangeBar").change(function(){
+                var opacityVal = $("#rangeBar").val();
+                console.log(opacityVal);
+                $("#div1").css("opacity",parseFloat(opacityVal)*0.01);
+                
+            })
+            */
+           var $div1 = $("#div1");
+           $div1.animate(
+                
+               {
+                    width:300,
+                    height:300,
+                },
+                5000,
+                "swing",
+                function() {
+                   console.log("ok");
+                }
+           )
+            
+
+         })
+
+
+
+
+    </script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #div1 {
+            width: 30px;
+            height: 30px;
+            opacity: 0.9;
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <div id="div1">
+           <h1>hello</h1>
+        </div>
+        <input type="range" min="0" value="100" max="100" step="1" id="rangeBar" name="rangeBar"/>
+    </div>
+    
+</body>
+</html>
