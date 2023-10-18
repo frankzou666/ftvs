@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wdwjtmp</title>
     <script src="../jquery-3.7.1.js"></script>
+    <script src="../jquery-ui.js"></script>
 
     <script>
          $(function() {
-            document.write(document.title);
+            $('input#dataInput').datepicker({
+                nextText:'向前',
+            });
+            
+          
+            
+            
           
 
          })
@@ -19,9 +26,17 @@
     </script>
 
     <style>
-        body{
+        *{
             margin: 0;
             padding: 0;
+        }
+        .container {
+            height: 100px;
+            width: 100px;
+            margin:  0 auto;
+        }
+        #ui-datepicker-next{
+            background-color: red;
         }
     </style>
 </head>
@@ -29,6 +44,7 @@
 
 <body>
     <div class="container">
+         <input type="text" id="dataInput">
     </div>
     
 </body>

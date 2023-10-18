@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue bootstrap template</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        *{
+            
+        }
+        .col-md-4{
+            margin:  0px auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-control">
+                    <div class="panel-header">
+                        <h1>系统登录</h1>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <form action="#">
+                            <div class="form-group">
+                                <label for="inputUserName">Username:</label>
+                                <input class="input-lg form-control" type="text" id="inputUserName">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">Password:</label>
+                                <input class="input-lg form-control" type="text" id="inputPassword">
+                            </div>
+                            <div class="form-group">                    
+                                <button class="btn btn-primary btn-lg form-control">Login</button>
+                            </div>
+                        </form>
+                        <p id="msg" class="card card-body bg-light">用户名和密码不对</p>
+                    </div>
+    
+                </div>
+
+            </div>
+         
+        </div>
+       
+    </div>
+
+   
+
+</body>
+</html>

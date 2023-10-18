@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35</title>
+    <style>
+        .alert{
+            color: red;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>title</h1>
+    </div>
+
+    <script>
+        //创建一个元素，一般在document的方法，但是放在哪个位置不一定的
+        var divElement = document.createElement('p');
+        divElement.textContent="this is create by js";
+        divElement.setAttribute("class","alert");
+
+        //这样可以直访问元素，比如新创建的元素放在id为app的后面
+        app.appendChild(divElement);
+  
+    </script>
+
+</body>
+
+</html>

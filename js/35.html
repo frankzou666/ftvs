@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35</title>
+    <script>
+        
+        //1000，每年是0.05，到5000需要多久,Math.round()取整
+        var sum = 1000;
+        var ratio = 0.05;
+        var year = 0;
+        /*
+        while(true) {
+            sum = sum + sum*ratio;
+            year ++;
+            document.write('<span>'+Math.round(sum)+'<span>');
+            document.write('<br>');
+            if (sum>=5000) {
+                break;
+            }
+        };
+        */
+        //使用for来写
+        for(;sum<5000;) {
+            sum = sum + sum*ratio;
+            year ++;
+            document.write('<span>'+Math.round(sum)+'<span>');
+            document.write('<br>');
+
+        }
+        document.write('<span> year:'+year+'<span>');
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

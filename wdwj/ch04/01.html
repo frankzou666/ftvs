@@ -10,33 +10,18 @@
     <script>
         $(function () {
 
-            
-           /*  $("a").on("click", function (event) {
+            //this表示事件发生的元素
+            $("a").on("click", function (event) {
                 var $this = $(this);
-                //如何得到元素的类型
-                if ($this.parent().prop("nodeName") !== "H1") {
-                    //如何给元素增加新的标签
-                    $this.wrap("<h1/>");
-                }
+                var $div2= ($this.siblings().last());
+                //event表示触发事件
+                console.log($div2.text());
+                $div2.attr("class","redBg");
+                console.log(event.target)
             })
-             */
-
-            
              
-         /*    $("a").on("click", function (event) {
-                var $this = $(this);  
-                var newElement = "<h1>hello</h>";
-                //替换为新的元素    
-                $this.replaceWith(newElement);    
-            })    
-        */   
 
-            
-
-
-        
-
-
+    
 
 
         })
@@ -66,6 +51,8 @@
 <body>
     <div class="container">
         <a href="#">to google</a>
+        <div id="div1">div1</div>
+        <div id="div2">div2</div>
     </div>
 
 </body>

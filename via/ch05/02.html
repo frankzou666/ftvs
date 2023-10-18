@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue bootstrap template</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        #app{
+            margin-top: 2%;
+        }
+        #upgradeTitle{
+
+        
+            margin: 0 auto;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="app">
+        <div class="row">
+            <h2 id="upgradeTitle" class="text">升级状态检测</h4>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>域名</th>
+                        <th>上次版本</th>
+                        <th>当前版本</th>
+                        <th>升级状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                
+                <tr>
+                    <td>www.163.com</td>
+                    <td>v 3.5</td>
+                    <td>v 7.1</td>
+                    <td>已升级</td>
+                    <td>
+                        <button class="btn btn-primary">检测</button>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>www.jd.com</td>
+                    <td>v 1.0</td>
+                    <td>v 1.1</td>
+                    <td>已升级</td>
+                    <td>
+                        <button class="btn btn-primary">检测</button>
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <td>www.google.com</td>
+                    <td>v 2.1</td>
+                    <td>v 2.1</td>
+                    <td>没有升级</td>
+                    <td>
+                        <button class="btn btn-primary">检测</button>
+                    </td>
+                </tr>
+
+            </table>
+        
+        </div>
+       
+    </div>
+
+   
+
+</body>
+</html>

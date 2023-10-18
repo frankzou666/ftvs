@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch09091</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+           
+           //my plugin
+           $.fn.extend({
+                select : function() {
+                    return this.addClass('movieSelected');
+                },
+                unselect : function() {
+                    return this.removeClass('movieSelected'); 
+                }
+            });
+
+            var movies = {
+                ready : function() {
+                    $('a#movieSelectAll').click(
+                        function(event) {
+                          event.preventDefault();
+                          $('ul.movieList li').select(); }
+                    );
+                    $(document).on( 'click.movieList',
+                        'ul.movieList li', function() {
+                            if ($(this).hasClass('movieSelected')) {
+                                $(this).unselect();
+                            }    
+                            else {
+                                $(this).select();
+                            }    
+                        }    
+                    );
+                }
+            }       
+
+          
+         $(function() {
+            //document.write(document.title);
+            //movies.ready();
+            $('a#movieSelectAll').click(
+                        function(event) {
+                          event.preventDefault();
+                          $('ul.movieList li').select(); }
+             );
+            $(document).on("click.movieList","ul.movieList li" ,function() {
+                           console.log($(this))
+                           if ($(this).hasClass('movieSelected')) {
+                                $(this).unselect();
+                            }    
+                            else {
+                                $(this).select();
+                            }  
+                          }
+            )
+
+
+
+         })
+
+
+
+
+    </script>
+
+    <style>
+        body{
+            font: 200 18px Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+h2 {
+font: 200 18px Helvetica, Arial, sans-serif;
+text-decoration: underline; }
+ul.movieList { list-style: none; margin: 10px; padding: 0;
+}
+ul.movieList li {
+padding: 3px; }
+ul.movieList li.movieSelected { background: forestgreen; color: white;
+} a{
+color: green; }
+a:hover {
+text-decoration: underline;
+}
+    </style>
+</head>
+
+
+<body>
+    <h2 class="h2Title">John Candy Movies</h2> 
+    <ul class='movieList'>
+        <li id="aaa">The Great Outdoors</li> <li>Uncle Buck</li> <li>Who&rsquo;s Harry Crumb?</li> <li>Canadian Bacon</li>
+        <li>Home Alone</li>
+        <li>Spaceballs</li>
+        <li>Planes, Trains, and Automobiles</li>
+    </ul>
+     <p>
+        <a href='javascript:avoid(0)' id='movieSelectAll'>Select All</a>
+     </p>
+
+    
+</body>
+</html>

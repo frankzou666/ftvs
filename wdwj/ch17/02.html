@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch1701</title>
+    <script src="../jquery-3.7.1.js"></script>
+    <script src="../jquery-ui.js"></script>
+
+    <script>
+         $(function() {  
+           $('body').append('<div id="h2diag">hello div2</div>'); 
+           $('#h2diag').dialog({
+               title:'it is good' ,
+               modal: true,  
+               autoOpen:false,
+           });
+
+           //通过autoOpen来控制对话框显示
+           $('#showDialogBnt').on('click',function(){
+                $('#h2diag').dialog({
+                autoOpen:true,
+                show:'explode',
+                });
+                
+            });
+            
+         }) 
+    </script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            height: 200px;
+            width: 200px;
+            margin:  0 auto;
+        }
+      
+    </style>
+</head>
+
+
+<body>
+     <h1>ok</h1>
+     <button id="showDialogBnt" >click me</button>
+</body>
+</html>
