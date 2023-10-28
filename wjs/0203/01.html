@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('hello')
+    })
+</script>
+
+<body>
+
+</body>
+
+<div id="div1">
+    <button id="btn1" onclick="btnClick(event)">commit</button>
+</div>
+
+<div class="div1" oncopy="alert('you can not');return false">
+    you can not copy the content
+</div>
+
+<script>
+    /* function btnClick(event) {
+         if(event.altKey){
+             console.log(event.which);
+ 
+      
+        console.log(event);
+        //window
+        console.log(event.clientX);
+        console.log(event.clientY);
+        //page
+        console.log(event.pageX);
+        console.log(event.pageY);
+
+    };
+ */
+
+ btn1.onclick(function(){
+    console.log('hello');
+ })
+</script>
+
+
+
+</html>

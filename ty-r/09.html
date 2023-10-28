@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09</title>
+    
+  
+    
+</head>
+<body>
+
+    <div id="app">
+
+    </div>
+
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="./babel.min.js"></script>
+
+    <!-- 一定要有text/babel -->
+    <script type="text/babel">
+            
+            //首字母大写
+            function Funvdom(){
+               return  <h1>函数式组件!</h1>;
+            }
+          
+            const vdom = React.createElement(Funvdom);
+
+
+         
+            //函数式组件，通过createElement
+            //ReactDOM.render(vdom,document.getElementById("app"));    
+            
+            //直接进行组件定义，并演染
+            ReactDOM.render(<Funvdom/>,document.getElementById("app"));       
+ 
+
+
+        
+    </script>
+    
+   
+</body>
+</html>

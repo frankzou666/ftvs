@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0201</title>
+    <script src="../react.js"></script>
+    <script src="../react-dom.js"></script>
+    <style>
+        .red{
+            background-color: red;
+        }
+        #ember1{
+            background-color: red;
+        }
+    </style>
+    <script >
+        document.addEventListener( "DOMContentLoaded",function() {
+            class HelloWorld extends React.Component {
+                render() {
+                    //在这里可以访问到属性
+                    console.log(this.props.id);
+                    console.log(this.props.title);
+                    console.log(this.props.class);
+                    //接收到所有参数，给createElement()
+                    return React.createElement("h1",this.props,"hello world1");
+                }
+            }
+             ReactDOM.render(
+                React.createElement(
+                    'div',
+                    null,
+                    React.createElement(HelloWorld,{
+                        id: 'ember1',
+                        title:'book1',
+                        class : 'red'
+                       
+                    }),
+                    React.createElement(HelloWorld,{
+                        id: 'ember2',
+                        title:'book2',
+                        class : 'red'
+                  
+                    }),
+                ),    
+                document.getElementById("app")); 
+        
+        } )
+        
+    </script>
+    
+</head>
+<body>
+
+    <div id="app">
+
+    </div>
+    
+   
+</body>
+</html>

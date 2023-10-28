@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rqtemp</title>
+    
+  
+    
+</head>
+<body>
+
+    <div id="app">
+
+    </div>
+
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="./babel.min.js"></script>
+
+    <!-- 一定要有text/babel -->
+    <script type="text/babel">
+        
+             //创建一个react element,使用原生js的方式
+            //var reactHello = React.createElement("h1",{id:'myH1'},"hello world");
+
+            //创建react element, 使用jsx 语法创建，但是需要引入babel.j
+            const vdom = <h1>hello world</h1>;
+            //render到页面上去
+            ReactDOM.render(vdom,document.getElementById("app"));          
+ 
+
+
+        
+    </script>
+    
+   
+</body>
+</html>

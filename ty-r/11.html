@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09</title>
+
+
+
+</head>
+
+<body>
+
+    <div id="app">
+
+    </div>
+
+    <script src="./react.js"></script>
+    <script src="./react-dom.js"></script>
+    <script src="./babel.min.js"></script>
+
+    <!-- 一定要有text/babel -->
+    <script type="text/babel">
+
+        //类组件，extedns React.Component, 必须要有render()
+        class MyComponent extends React.Component {
+            render() {
+                return <h1>this is MyComponent</h1>;
+            }
+
+        }
+
+
+        //直接进行组件定义，并演染
+        ReactDOM.render(<MyComponent/>, document.getElementById("app"));
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
