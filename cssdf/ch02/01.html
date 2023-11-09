@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0201</title>
+
+    <style>
+        /* 表示多个选择器共用相同的css规则，注意是","  逗号*/
+       /*  ul,a{
+            background-color: red;
+        } */
+
+        
+        /* 表示li元素，且有class=classb的DOM对像;
+           class名称最好不要是用number，CSS选择器识别不了，如果非用不可，则必须要转义 .\number
+        */
+
+        /* CSS基于多个class属性值选择，表示选中class="classa classa1" 的元素*/
+       /*  .classa.classa1{
+            font-weight: bold;
+            font-style: italic;
+        }
+ */
+        /*表示有id="liId2"的DOM对像;*/
+        /* CSS选择器大小写敏感*/
+       /*  #liid2{
+            font-weight: bold;
+            
+        } */
+         /* 简单属性选择器 */
+        /* li[id="liId2"]{
+            font-weight: bold;
+            
+        } */
+        
+        /* 精确属性选择器，属性和值与DOM中一致才match */
+        /* li[id="liId2"]{font-weight: bold;} */
+        /*  value 包含li的*/
+       /*  li[id *= "li"]  */
+        /* 表示ul下的li元素*/
+
+        /* > 表示直接子元素选择器，不包括孙子及后代元素 */
+
+        /*  
+            + , 表示当前选择器后直接“兄弟”元素；
+              li[id="liId2"]+li {color: red;}
+            ～, 表示当前选择器后的所有“兄弟元素”  
+               li[id="liId2"]~li  {color: red;}
+        
+        */
+        li[id="liId2"]~li  {color: red;}
+
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li class="classa classa1">toA</li>
+            <li id="liId2" class="classb"><a href="a.html">this is a </a></li>
+            <li id="liId3" ><a href="a.html">this is a </a></li>
+            <li id="liId4" ><a href="a.html">this is c </a></li>
+        </ul>
+        <a href="a.html">this is a </a>
+    </div>
+</body>
+</html>

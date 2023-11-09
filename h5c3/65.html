@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #content{
+        display: flex;
+        justify-content: left;
+
+    }
+    #div1{
+        background-color: red;
+        width: 100px;
+        height: 100px;
+    }
+    #div2{
+        background-color: #bfa;
+        width: 100px;
+        height: 100px;
+    }
+
+    #div3{
+        background-color: #bfabfa;
+        width: 100px;
+        height: 100px;
+    }
+    #div4{
+        background-color: black;
+        width: 100px;
+        height: 100px;
+    }
+    #content::after{
+        content:"hello"
+    }
+</style>
+
+<body>
+    <div id="content">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <div id="div4">
+
+    </div>
+
+</body>
+
+</html>

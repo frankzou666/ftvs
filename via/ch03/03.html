@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch03</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        #app{
+            width: 94%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: fixed;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        .navbar{
+            border-radius: 10px;
+        }
+        #dataTable {
+            margin-top: 6px;
+        }
+        
+        .main{
+            width: 80%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+               <h1>导航</h1>
+            </div>
+        </nav>
+        
+        <div>
+            <input type="text" name="redius" value="" v-model="redius">
+            <!--计算属性是一个函数的名字，但是在页面的语法就看起来像一个变量-->
+            <h1>The area is :{{calcArea}}</h1>
+        </div>
+
+
+           
+        
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+           data:{
+               redius:1
+               
+           },
+           computed: {
+            //计算属性calcArea
+            calcArea(){
+                return this.redius*this.redius*3;
+            }
+           },
+
+           //监控某个属性，比如可以进行一些处理，比如输入不能大于10
+           watch:{
+            redius:function(newValue,oldValue){
+                if (newValue>10) {
+                    this.redius=oldValue;
+                }
+
+            }
+           }
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+</html>

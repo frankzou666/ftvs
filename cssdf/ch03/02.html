@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="jquery-3.7.1.js"></script>
+    <title>ch0302</title>
+
+    <style>
+       
+    </style>
+
+    <script>
+
+        $(function() {
+            // 为button元素绑定一个click事件
+            $('td .editBtn').on('click',function(){
+                //这里表示button的元素，因为当前是在这个事上触发的，
+                var node$= $(this);
+                //得到下一个元素，是一个showBtn
+                var nextNode$= $(this).next();
+                //得到父元素后，才得兄弟元素的第一个元素，注单prev是往前取的
+                var firstTd=$(node$.parent().prevAll()[1]);
+                var firstTdValue = firstTd.text();
+                firstTd.html('<div> <input type="text" value='+firstTdValue+' > <button class="btnCfm">确定</button> </div>');
+                
+                //在编辑的时编辑按钮要禁止,显示按钮也要禁止
+                node$.attr('disabled',true);
+                nextNode$.attr('disabled',true);
+                
+
+                //为新增加的btn增加一个事件，on()很重要的一个特性就是元素还没有出现，但是可以增加事件了
+                $('.btnCfm').on('click',function(event){
+                    //得到input的值,注意是val()方法
+                    var node$= $(this);
+                    var inputVal= $(this).prev().val();
+                    //得到node$的父元素就是div,再得到父元素就是td,把td中的html值设为输入框中的内容,实现了一个编曲辑效果
+                    var td$=$(this).prev().parent().parent();
+                    td$.html(inputVal);
+                    //把在编辑的时编辑按钮要允许,显示按钮也要允许
+                    $(td$.nextAll()[1]).find('button').each(function() {
+                        $(this).attr('disabled',false);
+                    });
+                })
+       
+
+            });
+
+            //显示
+            $('td .showBtn').on('click',function() {
+                var node$= $(this);
+                //得到父元素后，才得兄弟元素的第一个元素，注单prev是往前取的
+                var firstTd=$(node$.parent().prevAll()[1]);
+                var firstTdValue = firstTd.text();
+                alert(firstTdValue);
+
+            }) 
+
+            
+
+
+
+        })
+       
+
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <table border="1" cellpadding="0px" cellspacing="0px">
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>frank</td>
+                <td>&nbsp<button class="editBtn" >编辑</button>&nbsp&nbsp<button class="showBtn">显示</button>&nbsp</td>
+                
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>smith</td>
+                <td>&nbsp<button class="editBtn" >编辑</button>&nbsp&nbsp<button class="showBtn">显示</button>&nbsp</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>oliver</td>
+                <td>&nbsp<button class="editBtn" >编辑</button>&nbsp&nbsp<button class="showBtn">显示</button>&nbsp</td>
+            </tr>
+
+            
+
+
+
+        </table>
+    </div>
+</body>
+</html>

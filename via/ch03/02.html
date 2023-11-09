@@ -21,10 +21,14 @@
 <body>
     <div id="app">
         <header>
-            <div class="navbar navbar-default">
-                <div class="navbar-header">
-                    <h1 v-text="sitename"></h1>
-                </div>
+            <div class="navbar navbar-default bg-light">
+                
+                <h1 v-text="sitename"></h1>
+                
+            </div>
+
+            <div class="nav navbar-nav navbar-right cart">
+                <span class="glyphicon glyphicon-shopping-cart"> {{ cartItemCount }}</span>
             </div>
         </header>
 
@@ -41,10 +45,27 @@
                     <p v-html="product.description"></p>
                     <!--调用过滤器-->
                     <p class="price" >{{product.price|formatPrice}}</p>
+                    <!-- v-show 控制元素是否显示，通过css的方式实现，-->
+
+                    <!--中间不能有元素隔断，两个按钮只能显示一个，当availableInventory为false时，按钮变了-->
+                    <button class="default btn btn-primary" v-on:click="addToCart" v-show="availableInventory">
+                       Add to Cart
+                    </button>
+
+                   <!--  <button class="default btn btn-primary" disabled v-else>
+                        Add to Cart
+                     </button> -->
                 </div>
+
+               
 
             </div>
         </main>
+        
+        <!--在这里也可以直接写js表达式，而且可以直接引用vue里面的变量-->
+        <!-- <button v-on:click="count++">点我加1</button>
+        <p>{{count}}</p> -->
+
 
 
     </div>
@@ -63,7 +84,12 @@
                     description: "A 25 pound bag of <em>irresistible</em>," + " organic goodness for your cat.",
                     price: 20,
                     image: "product-fullsize.png",
-                }
+                },
+                //定义库存
+                availableInventory: 5,
+                //定义购物车
+                cart : [ ],
+                
             },
             filters:{
                 formatPrice(price){
@@ -77,11 +103,25 @@
                         index += 4;
 
                     }
-                    console.log(priceArray);
                     return "$"+priceArray.reverse().join('');
                 }
-            }
+            },
+            methods: {
+                addToCart: function(){
+                    this.availableInventory = this.availableInventory -1;
+                    this.cart.push(this.product.id);
+                   
+                },
+            },
 
+            //计算属性
+            computed:{
+                //返回购物车中的项目数
+                cartItemCount: function() {
+                    return this.cart.length;
+
+                }
+            }
 
         });
 

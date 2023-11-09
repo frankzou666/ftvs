@@ -21,15 +21,31 @@
             var nodePrevall = node.prevAll();
             var nodeNextall = node.nextAll();
             //myself
-            console.log(node.html());
-            console.log(nodeParent.html());
-            console.log(nodeChildren.html());
-            console.log(nodeSiblings.html());
-            console.log(nodePrevall.html());
-            console.log(nodeNextall.html());
-            for (var i = 0; i < nodeNextall.length; i++) {
+            //console.log(node.html());
+            //onsole.log(nodeParent.html());
+            //console.log(nodeChildren.html());
+            //当兄弟子元素，但是不包括自己，而且出来是一个DOM对像，不是JQ对像,
+            //html ,children选取子元素，而且可以是多个
+            //包装成jq对像后，使用find再在其中找元素，但是注意返回的是数组
+            //console.log($(nodeSiblings[1]).find("a")[0]);
+            //console.log(nodePrevall.html());
+            //console.log(nodeNextall.html());
+             /*      for (var i = 0; i < nodeNextall.length; i++) {
                 console.log(nodeNextall[i]);
-            }
+            } */
+            
+            //找到ul元素下的，每个li元素下的元素
+            $('ul').find('li').find('a').each( function() {
+
+                var node = $(this);
+                console.log(node);
+                if (node.is('.class')) {
+
+                    console.log(node.text());
+                }
+                
+
+            })
 
 
 
@@ -49,10 +65,10 @@
             if ((target === undefined) && (href !== undefined)) {
 
                 //是否在新的窗口中转到163
-                if (confirm("go 163?")) {
+                /* if (confirm("go 163?")) {
                     $(this).attr('target', '_blank');
                     $(this).attr('href', 'http://www.163.com');
-                }
+                } */
 
 
 
@@ -97,7 +113,7 @@
     <div class="container">
         <ul>
             <li id="toGoogleLi"><a id="toGoogle" class="mainLink" href="#">to Google</a></li>
-            <li><a id="toBBC" class="mainLink" href="#">to BBC</a></li>
+            <li><a id="toBBC" class="mainLink good" new="ok" href="#" >to BBC</a></li>
             <li><a id="toCNN" class="mainLink" href="#">to CNN</a></li>
         </ul>
 

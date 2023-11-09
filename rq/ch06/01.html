@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0601</title>
+    <script src="../react.js"></script>
+    <script src="../react-dom.js"></script>
+    <script src="../babel.min.js"></script>
+    
+    
+</head>
+<body>
+
+    <div id="app">
+
+    </div>
+
+    <script type="text/babel">
+        
+        class Weater extends React.Component{
+            constructor(props){
+                super(props)
+                //定义state对像的方法，和初始值
+                this.state = {isHot: this.props.isHot};
+                this.changerWeather = this.changerWeather.bind(this);
+
+            }
+            changerWeather(){
+                //state的值不能直接改，需要通过this.setState({}),对像是合并的
+                this.setState({
+                    isHot:(!this.state.isHot)
+                })
+            }
+            render(){
+                //绑定一个方法，注意bind()和方法
+                return <h1 onClick={this.changerWeather}>
+                           今天天气很：{this.state.isHot?'凉爽':'闷热'}
+                       </h1>
+            }
+        }
+        ReactDOM.render(<Weater isHot='true'/>,document.getElementById("app"));
+
+        
+    </script>
+    
+   
+</body>
+</html>

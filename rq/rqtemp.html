@@ -4,16 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rqtemp</title>
-    <script src="./react.js"></script>
-    <script src="./react-dom.js"></script>
-    <script >
-        document.addEventListener( "DOMContentLoaded",function() {
-            var reactHello = React.createElement("h1",null,"hello world");
-            ReactDOM.render(reactHello,document.getElementById("app"));
-
-        } )
-        
-    </script>
+    <script src="../react.js"></script>
+    <script src="../react-dom.js"></script>
+    <script src="../babel.min.js"></script>
+    
     
 </head>
 <body>
@@ -21,6 +15,14 @@
     <div id="app">
 
     </div>
+
+    <script type="text/babel">
+        
+        var reactHello = React.createElement("h1",null,"hello world");
+        ReactDOM.render(reactHello,document.getElementById("app"));
+
+        
+    </script>
     
    
 </body>

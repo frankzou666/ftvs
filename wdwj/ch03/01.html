@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0301</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+        $(function () {
+
+            //每元素绑定一个事件，注意event和$(this),表示事件和事件所引发的对像
+            //$(this)顺便把当前的对像包装成一个jq对
+            /* $('div.finderDirectory, div.finderFile').on('dblclick',
+                function (event) {
+                    $('div.finderIconSelected').removeClass('finderIconSelected');
+                    $('span.finderDirectoryNameSelected').removeClass('finderDirectoryNameSelected');
+                    $(this).find('div.finderIcon').addClass('finderIconSelected');
+                    $(this).find('div.finderDirectoryName span').addClass('finderDirectoryNameSelected');
+                }); */
+
+            //开始的时候，手动触发一个事件，注意如何去在一组对像中，过滤一个元素，第二是如何去触发一个事件
+
+            //$('div.finderDirectory, div.finderFile').filter(':first').click();    
+            //如果不支持原生的比如click,或是自定义事件，那就需要手动去触发 
+
+
+            //给div上绑定一个eventNotExists事件,这事件是自定义的
+
+            var isBindingEventNotExists = true;
+
+            $('#finderFiles').on('eventNotExists', function () {
+                console.log('eventNotExists fired...');
+            });
+
+            //通过btn上的click事件来触发div上的eventNotExists,设置标志位，如果有绑定就触发，再触发，再设置标志位
+            $('#btn').on('click', function () {
+                if (isBindingEventNotExists) {
+                    $('#finderFiles').trigger('eventNotExists');
+                } else {
+                    isBindingEventNotExists = true;
+                    $('#finderFiles').on('eventNotExists', function () {
+                       console.log('eventNotExists fired...');
+                    });
+                    $('#finderFiles').trigger('eventNotExists');
+                };
+            });
+
+
+            //取消div上绑定的eventNotExists事件，并清除标志位
+            $('#btnCancel').on('click', function () {
+                $('#finderFiles').off('eventNotExists');
+                isBindingEventNotExists = false;
+
+            });
+
+
+
+
+
+
+        })
+
+
+
+
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <div id='finderFiles'>不存在的事件</div>
+    <button class="" id="btn">点我</button>
+    <button class="" id="btnCancel">点我取消</button>
+
+</body>
+
+</html>
