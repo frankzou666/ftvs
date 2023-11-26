@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function success(position){
+            document.write(position.coords.latitude);
+
+        };
+
+        function error(position){
+            document.write(position.message);
+
+        }
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(success,error,null);
+
+        }
+    </script>
+</head>
+<body>
+    <h1>得到当前的地理位置</h1>
+    
+    
+</body>
+</html>

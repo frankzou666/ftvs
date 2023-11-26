@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0602</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #app {
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            border-radius: 10px;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+                <h1>导航</h1>
+            </div>
+        </nav>
+     
+
+
+        <div class="main" id="mainDiv">
+                
+                <!-- 动态绑定props
+                   通过v-bind给子组件绑定一个属性，msg来自父组件的一个变量
+                   button每次修改msg的值，引发了子组件重新render元素
+                
+                
+                -->
+                <mycomponent v-bind:name="msg"></mycomponent>
+                <button v-on:click="updateMsg">click me</button>
+                
+      
+                
+           
+  
+           
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        //Vue.compoent就是全局组件，而且需要先于vm实例创建
+        /* Vue.component("my-component", {
+            name: "",
+            template: `<div>
+                            <h1>this is my global component!</h1>
+                      </div>`
+        }); */
+        
+        //组件在定义时，会接收一个参数name, 使用props配置属性来接收，父组件使用
+        // 父组件使用属性来传参数<mycomponent name="hello world"></mycomponent>
+        const mycomponent = {
+            template:'<h1>This is a local component: {{name}}!</h1>',
+            props:{
+                name: {
+                    type:String,
+                    default: 1,
+
+                }
+            }
+        };
+
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            data: {
+                msg:0,
+
+            },
+            components:{mycomponent},
+            methods: {
+                updateMsg(){
+                    this.msg=Math.round(Math.random()*10);
+
+                }
+
+            },
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+
+</html>

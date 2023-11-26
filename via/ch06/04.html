@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0602 custom events</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #app {
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            border-radius: 10px;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+                <h1>导航</h1>
+            </div>
+        </nav>
+     
+
+
+        <div class="main" id="mainDiv">
+                
+                <!-- 
+                    
+                -->
+                {{counter}}
+                <button v-on:click="incrementCounter">点我+1</button>
+                <!--
+
+                    给子组件绑定了一个事件increment-Counter-from-child，这个组件实际上是调用了父组件的一个方法incrementCounter
+                -->
+                <my-component :mycounter.sync="counter"></my-component> 
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+
+        
+        const MyComponent = {
+            props:['mycounter'],
+            template: `<div>
+                         <button v-on:click="incrementCounterchild">点我+1来自子组件</button>
+                
+                       </div>`,
+            methods:{
+                //注意这里只能全部是小写，有坑
+                //update:mycounter 通过.sync就可以把数据从子组件传到父组件了this.$emit
+                 incrementCounterchild(){
+                    console.log('子组件点了。。。');
+                    this.$emit('update:mycounter', this.mycounter+2);
+                    
+                }
+
+
+            }           
+          
+        };
+
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            data() {
+                return {
+                    counter: 0,
+                }    
+
+
+            },
+            components:{'my-component':MyComponent},
+            methods: {
+                incrementCounter(){
+                    this.counter++;
+
+                }
+            },
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+
+</html>

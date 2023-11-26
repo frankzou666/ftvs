@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vue bootstrap template</title>
+    <title>ch0602</title>
     <!--load Bootstrap-->
     <link rel="stylesheet" href="../bootstrap.min.css">
     <script src="../jquery.min.js" defer></script>
@@ -34,33 +34,6 @@
             width: 80%;
             margin: 0px auto;
         }
-
-
-        .fade-enter-active,
-        .fade-leave-active {
-            transition: opacity 3.0s ease-out;
-        }
-
-        .fade-enter,
-        .fade-leave-to {
-            animation: fadeIn 2s;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                transform: scale(0.1);
-                opacity: 0;
-            }
-
-            60% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
     </style>
 </head>
 
@@ -73,18 +46,24 @@
                 <h1>导航</h1>
             </div>
         </nav>
-    
+     
+
 
         <div class="main" id="mainDiv">
-            <div @click="show = !show">
-                <h2>{{title}}</h2>
-            </div>
-            <!--transition一定要设置name属性，再配合css出现动画效果-->
-            <transition name="fade">
-                <div v-if="show">
-                    <h1>{{description}}</h1>
-                </div>
-            </transition>
+                
+                <!-- 
+                    inline-template需要使用关键字inline-template
+                -->
+                <my-component :name="hello" inline-template>
+                    <div>
+                        <h1>
+                            this is inline component {{name}}
+                        </h1>
+
+                    </div>
+            
+                </my-component>
+
 
         </div>
     </div>
@@ -92,16 +71,27 @@
 
 
     <script>
+
+        
+        //组件在定义时，会接收一个参数name, 使用props配置属性来接收，父组件使用
+        //组件在定义时，会接收一个参数name, 使用props配置属性来接收，父组件使用
+        // 父组件使用属性来传参数<mycomponent name="hello world"></mycomponent>
+        const MyComponent = {
+            props: ['name']
+          
+        };
+
         Vue.config.productionTip = false;
         const vm = new Vue({
-            data: {
-                description: 'Lorem ipsum dolor sit amet',
-                title: 'Dog',
-                show: false
+            data() {
+                return {
+                    hello:'hello msg'
+                }    
+
 
             },
+            components:{'my-component':MyComponent},
             methods: {
-
             },
 
         });

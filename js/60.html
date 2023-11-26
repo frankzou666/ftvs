@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous">
+        let img=document.createElement('img');
+        img.src= '1.png';
+        //如果加载成功了，就放到页面，如果不成功则报错
+        img.onload = function(){
+            document.body.append(img);
+        }
+        img.onerror =function() {
+            alert('i can not load gif...');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
