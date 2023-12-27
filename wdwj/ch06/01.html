@@ -10,11 +10,13 @@
 
     <script>
         $(function () {
-          
-            $("p").css({backgroundColor:"green"});
+            //设置一个值
+            //$("p").css({backgroundColor:"green"});
+            //获取多个值
+            console.log($('p').css(["backgroundColor","fontSize"]));
             //设置和得到元素的高和宽
-            console.log($("p").outerHeight());
-            console.log($("p").outerWidth());
+            //console.log($("p").outerHeight());
+            //console.log($("p").outerWidth());
             $("p").outerWidth("300");
         })
 
@@ -26,14 +28,22 @@
             padding: 0;
         }
 
+        #p1{
+            background-color: red;
+        }
+        #p2{
+            background-color: green;
+        }
+
+
     </style>
 </head>
 
 
 <body>
     <div id="mainContent" class="container">
-        <p>第是p1</p>
-        <p>来吧，今天不错1</p>
+        <p id="p1">第是p1</p>
+        <p id="p2">来吧，今天不错1</p>
         
     </div>
 

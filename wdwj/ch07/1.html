@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdwjtmp</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+         $(function() {
+            
+            //btnGetJson  click事件
+            $("#btnGetJson").on("click",function(){
+                //失败的回调如何处理？
+                $.getJSON(
+                    "http://127.0.0.1:8087/bookbymyname/test",
+                    function(json) {
+                        console.log(json);
+                    }
+                )
+            });
+            
+            //btnUserlogin click事件，处理formUserlogin
+      
+
+            $("#btnUserlogin").on("click",function(event){
+
+                //serialize()会自动把所有的参数都放到一个查询字符串中
+                console.log($("#formUserlogin").serialize());
+                event.preventDefault();
+                
+                
+                
+            });
+
+            //btnGetJS click 事件
+            $("#btnGetJS").on("click",function(event){
+                event.preventDefault();
+                //动态请求服务器上的1.js文件，并且开始执行，比如有们可以动态加一个第三方库之类的
+                //比如vue.js文件在一开始不会使用，仅在特定的时候使用，可以分开加载
+                $.getScript(
+                    "2.js",
+                    function(data){
+                        console.log(data)
+
+                    }
+                )
+
+            });
+
+            //ajax事件
+            $.ajaxSetup({
+                success:function(response,status,request){
+                    console.log(response);
+                    console.log(status);
+                    console.log(request);
+                    
+
+                },
+                //error返回一个对像，比如error.status=404,
+                error:function(error){
+                    console.log(error);
+
+                }
+            });
+
+
+
+         })
+
+
+
+
+    </script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <form id="formUserlogin"  method="post">
+            <input type="text" name="name" placeholder="name"/>
+            <input type="text" name="title" placeholder="title">
+            <button id="btnUserlogin">commit</button>
+        </form>
+
+        <button id="btnGetJson">getJson</button>
+        <button id="btnGetJS">getJS</button>
+    </div>
+    
+</body>
+</html>

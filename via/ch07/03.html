@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0703 scoped slots</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #app {
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            border-radius: 10px;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+                <h1>导航</h1>
+            </div>
+        </nav>
+
+        <div class="main" id="mainDiv">
+            <book-component :books="books">
+                <h1 slot="header">{{header}}</h1>
+                <!-- 只是在这里增加了一个template元素，有点类似于另一个slot,怎么就传递了数据呢 ？ -->
+                <template slot="book" slot-scope="props">
+                    <h2>
+                        <h4>{{props.text.title}}</h4>
+                        <small>{{props.text.author}}</small>
+                    </h2>
+
+                </template>
+
+            </book-component>
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const BookComponent = {
+            template: `
+                      <div>
+                       <slot name="header"></slot>
+                       <slot name="book"  v-for="book in books" :text="book"> </slot>
+                      </div>
+                     `,
+            props: ['books']
+        }
+
+
+
+        const vm = new Vue({
+            data() {
+                return {
+                    header : 'This is header',
+                    books: [{ author: 'John Smith', title: 'Best Of Times' },
+                    { author: 'Jane Doe', title: 'Go West Young Man' },
+                    { author: 'Avery Katz', title: 'The Life And Times Of Avery' }
+                    ]
+                }
+            },
+            components: { 'book-component': BookComponent },
+            methods: {
+
+            },
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+
+</html>

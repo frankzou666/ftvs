@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue bootstrap template</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        #app{
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        .navbar{
+            border-radius: 10px;
+        }
+        
+        .main{
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        .fade-enter-active{
+            transition: opacity 5.0s ease-out;
+        }
+
+        .fade-enter,.fade-leave-to{
+            opacity: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+               <h1>导航</h1>
+            </div>
+        </nav>
+        
+        <div class="main" id="mainDiv">
+            <div>
+                <h2 @click="show = !show">{{title}}</h2>
+            </div>
+
+            <!-- 如果仅是这样，没有什么效果 -->
+            <transition name="fade">
+                <div v-if="show">
+                    <p>{{description}}</p>
+                </div>
+
+            </transition>
+
+  
+        </div>
+    </div>
+
+   
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+           data:{
+            show:false,
+            title:"Java books",
+            description:"this is a good book"
+
+
+           },
+           methods: {
+            
+           },
+           
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+</html>

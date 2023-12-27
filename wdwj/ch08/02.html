@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wdwjtmp</title>
+    <script src="../jquery-3.7.1.js"></script>
+
+    <script>
+         $(function() {
+            $("#btnShow").attr('disabled',true);
+            //显示一个对像
+            $("#btnShow").on("click",function(){
+                var $h1Text=$("#h1Text");
+                $h1Text.show();
+                $(this).attr('disabled',true);
+                $("#btnHide").attr('disabled',false);
+            
+            });
+            //隐藏一个对像
+            $("#btnHide").on("click",function(){
+                var $h1Text=$("#h1Text");
+                $h1Text.hide();
+                $(this).attr('disabled',true);
+                $("#btnShow").attr('disabled',false);
+            });
+
+            //在显示和隐藏之间进行切换
+            $("#btnToggle").on("click",function(){
+                var $h1Text=$("#h1Text");
+                $h1Text.toggle();
+            });
+
+
+          
+
+         })
+
+
+
+
+    </script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+         <h1 id="h1Text">Hello world!</h1>
+         <button id="btnShow">显示</button>
+         <button id="btnHide">隐藏</button>
+         <button id="btnToggle">切换</button>
+
+    </div>
+    
+</body>
+</html>

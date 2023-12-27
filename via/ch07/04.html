@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0704 dynamic component</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #app {
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            border-radius: 10px;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+                <h1>导航</h1>
+            </div>
+        </nav>
+
+        <div class="main" id="mainDiv">
+            <!-- component的属性is,指定由哪个组件来填写，
+               不是以前那种<component / > 来写死的.
+               这样可以实现比如SPA应用的时候，点不同的功能，加载不同的组件，
+            -->
+            <component :is="componentName"></component>
+            <button @click="switchComponent">Switch Component</button>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const Component1 = {
+            template: `
+                      <div>
+                        <h1>this component 1</h1>
+                      </div>
+                     `
+        };
+
+        const Component2 = {
+            template: `
+                      <div>
+                        <h1>this component 2</h1>
+                      </div>
+                     `
+        }
+        const vm = new Vue({
+            data() {
+                return {
+                    componentName:'',
+                   
+                }
+            },
+            components: { 
+                'component-1': Component1 ,
+                'component-2': Component2 ,
+
+            },
+            methods: {
+                switchComponent(){
+                    //第一次点，设个默认值，然后返回
+                    if (this.componentName.length===0) {
+                        this.componentName = 'component-1';
+                        return;
+                        
+                    }
+                    //后续在不同的组件之间进行换
+                    this.componentName=this.componentName==='component-1'?'component-2':'component-1'
+
+
+
+                },
+
+            },
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+
+</html>

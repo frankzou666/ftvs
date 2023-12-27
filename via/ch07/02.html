@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch0703</title>
+        <!--load Bootstrap-->
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <script src="../jquery.min.js" defer></script>
+        <script src="../bootstrap.min.js" defer></script>
+
+        <!--load vue-->
+        <script src="../vue274.js"></script>
+
+        <style>
+            body {
+                background-color: lightgray;
+            }
+
+            #app {
+                width: 94%;
+                height: 1000px;
+                border-radius: 10px;
+                background-color: white;
+                margin: 0 auto;
+            }
+
+            .navbar {
+                border-radius: 10px;
+            }
+
+            .main {
+                width: 80%;
+                margin: 0px auto;
+            }
+        </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+                <h1>导航</h1>
+            </div>
+        </nav>
+
+        <div class="main" id="mainDiv">
+            <form-component >
+            
+            <h1>{{header}}</h1>
+            <!-- 父component在调用时，需要在元素中指定slot属性  -->
+            <label slot="titleSlot">{{titleLabel}}</label>
+            <label slot="authorSlot">{{authorLabel}}</label>
+            </form-component>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+
+        const FormComponent = {
+            //slot定义了，这里就是一个占位符，至于什么内容，由调用者决定，比如我可以写成一个<h>,<p>而不需要写死
+            //在定义slot时，指定了一个name属性，父component在调用时，需要在元素中指定slot属性
+            template: `<div>
+                         <form>
+                           <slot></slot>
+                           <slot name="titleSlot"></slot>
+                           <input id="title" type="text" /><br/>
+                           <slot name="authorSlot"></slot>
+                            <input id="author" type="text" /><br/>
+                           <button>Submit</button>
+                         </form>
+                         </div>`,
+        }
+        const vm = new Vue({
+            data() {
+                return {
+                    titleLabel: 'The Title1:',
+                    authorLabel: 'The Author1:',
+                    header: 'This is Form header'
+                }
+            },
+            components:{'form-component':FormComponent},
+            methods: {
+
+            },
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+
+</html>

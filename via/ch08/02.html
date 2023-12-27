@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue bootstrap template</title>
+    <!--load Bootstrap-->
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <script src="../jquery.min.js" defer></script>
+    <script src="../bootstrap.min.js" defer></script>
+
+    <!--load vue-->
+    <script src="../vue274.js"></script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #app {
+            width: 94%;
+            height: 1000px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            border-radius: 10px;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        /*
+        *   CSS定义动画,animation: 关键帧的名字
+        */
+
+        .bounce-enter-active {
+            animation: bounceIn 2s;
+        }
+
+        .bounce-leave-active {
+            animation: bounceIn 2s reverse;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }    
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--nav -->
+        <nav class="navbar navbar-default bg-light">
+            <div class="">
+                <h1>导航</h1>
+            </div>
+        </nav>
+
+        <div class="main" id="mainDiv">
+            <div>
+                <h2 @click="show = !show">{{title}}</h2>
+            </div>
+
+            <!-- 如果仅是这样，没有什么效果 -->
+            <transition name="bounce" @enter="enter" @leave="leave">
+                <div v-if="show">
+                    <p>{{description}}</p>
+                </div>
+
+            </transition>
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            data: {
+                show: false,
+                title: "Java books",
+                description: "this is a good book"
+
+
+            },
+            methods: {
+                //进入时候的hook,比如设置CSS样式
+                enter(el){
+                    console.log("enter...");
+                    el.style.backgroundColor="red";
+                },
+                leave(){
+                    console.log("leave...");
+                }
+            
+
+            },
+
+        });
+        vm.$mount("#app");
+    </script>
+</body>
+
+</html>
