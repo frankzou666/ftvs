@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=320px, initial-scale=1">
+    <title>grid</title>
+    <style>
+        body{
+            margin: 0%;
+            width: 100%;
+          
+        }
+        .row{
+            height: 100vh;
+            width: 100%;
+            background-color: bisque;
+            
+        }
+        /* 子元素如果没有定义width和height,那就使用grid分配行的*/
+       
+        .container{
+            height: inherit;
+            display: grid;
+            grid-template-rows: 50px 1fr 22px;
+            grid-template-columns: 15% 1fr;
+            grid-template-areas: 
+            "div1 div1"
+            "div2 div3"
+            "div2 div4 ";
+        }
+        .box{
+            color: white;
+        }
+        .box1{
+            
+            background-color:  #008faf;
+            grid-area: div1;
+
+        }
+        .box2{
+            background-color:black;
+            grid-area: div2;
+        }
+        .box3{
+            background-color: lightgrey;
+            grid-area: div3;
+        }
+        .box4{
+            background-color:  #008faf;
+            grid-area: div4;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            
+        }
+        li{
+            margin: 0 1vh;
+        }
+        .logo{
+            margin-right: 75%;
+            margin-top: -5px;
+            margin-left: 0;
+        }
+        a{
+            font-weight:bold;
+            font-size: 0.6cm;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: auto 0;
+            
+        }
+
+      
+    </style>
+</head>
+<body>
+    
+</body>
+  <div class="row">
+    <div class="container">
+        <div class="box box1 header">
+            <ul>
+                <li class="logo"><a>XXX项目管理系统</a></li>
+                <li>功能2</li>
+                <li>功能3</li>
+                <li>功能4</li>
+            </ul>
+
+        </div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+
+  </div>
+ 
+</html>
