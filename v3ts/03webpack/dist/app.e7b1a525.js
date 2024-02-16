@@ -1,0 +1,1 @@
+(()=>{"use strict";document.title="eee",document.write("good")})();

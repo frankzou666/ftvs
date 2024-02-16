@@ -9,12 +9,12 @@ import './account.styl'
 
 function Account() {
     const navigate = useNavigate();
+    
     return (
         <div className='P-account'>
-            <h1>this is account page</h1>
+            <h2>this is account page</h2>
             <div className='ipt-con'>
                 <Button type='primary' onClick={()=>{navigate('/login')}}>返回登录</Button>
-
             </div>
 
         </div>

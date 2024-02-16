@@ -7,8 +7,18 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   server:{
-    port: 5000,
-    open:"/"
+    port: 5005,
+    open:"/",
+    //在所有端口上侦听
+    host:true,
+    //设置代理
+    proxy:{
+      '/api':{
+        target:'',
+        changeOrigin:true
+
+      }
+    }
   },
   resolve:{
     alias:{

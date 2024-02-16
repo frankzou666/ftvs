@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+       #circle {
+    background: lightblue;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+       }
+        .day01{
+            width: 100px;
+            padding-top: 50%;
+            margin-left: 50%;
+            border-bottom: 3px solid red;
+            transition: all 6s;
+            transform-origin: left bottom;
+        }
+
+        .day01:hover1{
+            transform: rotate(360deg);
+            
+        }
+
+        
+
+    </style>
+
+    
+</head>
+<body>
+
+    <div id="circle">
+        <div class="day01" id="day011"> </div>
+        
+    </div>
+
+    
+   
+    
+</img>
+
+<script>
+    function trigger(el, eventName) {
+    const event = new Event(eventName)
+    // 如果要传递数据可以挂在 event 上
+    el.dispatch(event)
+}
+    const myDiv = document.getElementById("day011");
+    myDiv.addEventListener("mouseover", function() {
+    myDiv.style.transform = "rotate(360deg)";
+    });
+    const event = new Event("onmouseover")
+    myDiv.dispatchEvent(event)
+</script>
+
+</body>
+</html>

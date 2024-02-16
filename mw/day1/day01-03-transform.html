@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .day01{
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            background: url("./images/day01.png");
+            overflow: hidden;
+        }
+
+        .day01::before,.day01::after{
+            content: "";
+            float: left;
+            width: 250px;
+            height: 300px;
+            background: url("./images/day01-01.png");
+            transition: all 0.8s;
+
+        }
+
+        .day01::after{
+            background-position: right 0;
+
+        }
+
+
+        .day01:hover::before{
+            transform: translate(-100%,0);
+              }
+
+        .day01:hover::after{
+            transform: translate(100%,0);
+     
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="day01">
+   
+    
+    </div>
+    
+</body>
+</html>
