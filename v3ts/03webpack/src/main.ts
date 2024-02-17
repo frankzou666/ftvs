@@ -1,2 +1,1 @@
-document.title='eee';
-document.write('good')
+import './04继承多态'
