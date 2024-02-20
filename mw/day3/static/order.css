@@ -1,0 +1,89 @@
+
+
+body{
+    background-color: #f7f7f8;
+}
+.pannel{
+    background-color: white;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.main{
+    padding-top: 12px;
+    /* 这个bottom就是为防止底部让工具条给override*/
+    padding-bottom: 80px;
+    padding-left: 11px;
+    padding-right: 11px;
+
+}
+
+.userMsg{
+    padding: 15px 0px 15px 15px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.userMsg .location{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-image: linear-gradient(90deg,red,black);
+    color: white;
+    flex: 1;
+}
+
+.userMsg .address{
+    flex: 8;
+}
+.userMsg .address .bottom{
+    font-size: 12px;
+} 
+.userMsg .nav{
+    flex: 1;
+}
+
+.userMsg .nav i{
+    padding-left: 10px;
+}
+
+.toolbar{
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid #ededed;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 11px;
+
+}
+
+.toolbar .total{
+    font-size: 18px;
+}
+.toolbar .total span{
+    padding: 10px;
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+.toolbar .playBtn Button{
+    width: 90px;
+    height: 40px;
+    background-color: rgb(10, 164, 10);
+    border: 0;
+    font-size: 20px;
+    color: white;
+}
+.toolbar .playBtn Button:hover{
+    background-color: rgb(36, 215, 36);
+
+}

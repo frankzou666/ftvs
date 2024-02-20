@@ -14,6 +14,7 @@ import PrivateRouter from '@/route'
 //import App from '@/pages/home/'
 //import App from '@/pages/account/'
 
+
 import '@/commons/styles/frame.styl';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

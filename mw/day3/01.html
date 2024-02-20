@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            left: 0;
+         }
+         li{
+            list-style:  none;
+            float: left;
+            width: 33.33%;
+            text-align: center;
+            line-height: 50px;
+         }
+         .toolbar{
+            /*流式布局，或是百分比布局 */
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            position: fixed;
+            left:0;
+            bottom: 0;
+            /* border-top:1px solid gray; */
+            box-shadow: 4px 3px 4px 2px black;
+            
+         }
+         ul{
+            width: 100%;
+            padding: 0;
+         }
+         .toolbar ul li a{
+            color: gray;
+            text-decoration: none;
+            text-align: center;
+         }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">系统</a></li>
+            <li><a href="#">登录</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
