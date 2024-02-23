@@ -1,0 +1,365 @@
+
+
+.xtc_body{
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.red{
+    color: red;
+}
+
+.xtc_body .wrapper{
+    display:  flex;
+}
+
+
+.xtc_body  .wrapper .aside{
+    margin-right: 18px;
+    min-height: 500px;
+    width: 227px;
+    background-color: #fff;
+}
+
+.xtc_body  .wrapper .main{
+    flex: 1;
+    min-height: 500px;
+
+}   
+
+.xtc_body  .wrapper .main .accountOverview{
+    height: 132px;
+    background-color: #fff;
+    margin-bottom: 18px;
+    padding: 20px 0;
+    display: flex;
+}   
+
+
+.accountOverview div p{
+    font-size: 16px;
+}
+.accountOverview .left {
+    border-right: 1px solid #f7f7f7;
+    flex :1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.accountOverview .left a{
+    text-align: center;
+
+}
+
+.accountOverview .left a:nth-child(1) img{
+    width: 25px;
+    margin-bottom: 8px;
+}
+.accountOverview .left a:nth-child(2) img{
+    width: 25px;
+    margin-bottom: 8px;
+}
+.accountOverview .left a:nth-child(3) img{
+    width: 21px;
+    margin-bottom: 4px;
+}
+
+
+.accountOverview .right {
+    border-right: 1px solid #f7f7f7;
+    flex :1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.accountOverview .right a {
+    text-align: center;
+    
+}
+
+.accountOverview .right a span{
+    margin-bottom: 8px;
+    font-size: 25px;
+    color: red;
+    
+}
+
+
+.main .panel {
+    padding: 28px 18px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.panel .common-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel .common-title h4 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.panel .common-title  a {
+    margin-top: 8px;
+    color: #999;
+}
+
+.orderContent li{
+    display: flex;
+    height: 125px;
+    border: 1px solid #f4f4f4;
+    margin-bottom: 20px;
+}
+
+
+.orderContent li .status{
+    width: 120px;
+    
+}
+
+.orderContent li .pay{
+    width: 200px;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
+
+.orderContent li .action{
+    width: 180px;
+}
+
+
+.orderContent li:last-child{
+    margin-bottom: 0;
+}
+
+.orderContent li .good{
+    flex:1;
+    margin-right: 120px;
+    display: flex;
+    align-items: center;
+}
+
+
+.good .pic {
+    padding-left: 15px;
+    width: 80px;
+    margin-right: 15px;
+    
+}
+
+.good .desc {
+    width: 0;
+    flex: 1;
+    
+}
+
+.good .desc h5 {
+    font-size:14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    
+}
+
+.status p{
+    font-size: 18px;
+}
+
+.status a{
+    font-size: 14px;
+}
+
+.good .desc span {
+    font-size:12px;
+    color: #999;
+}
+
+.orderContent .common {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pay p:nth-child(1) {
+    color: red;
+    font-size: 18px;
+}
+
+.orderContent .action a:first-child{
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* 侧边栏 */
+
+.xtc_body .wrapper .aside{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.xtc_body .wrapper .aside .common{
+    padding: 30px;
+}
+
+.xtc_body .wrapper .aside .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 160px;
+    border-bottom: 3px solid #f7f7f7;
+    text-align: center;
+} 
+.xtc_body .wrapper .aside .header p:nth-child(2){
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+} 
+
+.xtc_body .wrapper .aside .header p:nth-child(3){
+    background-color: red;
+    height: 20px;
+    width: 80px;
+    font-size: 12px;
+    font-weight: 600;
+    color: antiquewhite;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 20px;
+} 
+
+.xtc_body .wrapper .aside .header img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    
+}
+
+.xtc_body .wrapper .aside .middle{
+    height: 340px;
+    border-bottom: 3px solid #f7f7f7;
+    margin-bottom: 10px;
+} 
+
+.xtc_body .wrapper .aside .middle-common-title{
+    font-size: 14px;
+    font-weight: 550;
+    margin-bottom: 16px;
+    height: 20px;
+}
+
+
+.xtc_body .wrapper .aside  .middle-common-ul{
+    padding-left: 2px;
+    font-size: 12px;
+    
+}
+
+
+.xtc_body .wrapper .aside .middle .middle-common-ul-1{
+   height: 260px;
+   display: flex;
+   flex-direction: column; 
+}
+
+.xtc_body .wrapper .aside .footer .middle-common-ul-2{
+    height: 160px;
+    display: flex;
+    flex-direction: column; 
+ }
+
+.middle-common-ul li{
+    margin-bottom: 8px;
+    flex: 1;
+}
+
+.middle-common-ul  li:hover{
+    list-style:square;
+    color: red;
+
+}
+
+
+
+
+
+
+/* 侧边栏 end */
+
+
+/* 收藏商品 */
+
+.favgoods {
+    height: 280px;
+}
+
+.favgoods .favgoods-title{
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.favgoods .favgoods-content{
+    padding-top: 15px;
+}
+.favgoods-content ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.favgoods-content  ul li{
+   width: 180px;
+   height: 140px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.favgoods-content  ul li img{
+    width: 110px;
+    height: 100px;
+    margin-bottom: 8px;
+    
+ }
+ .favgoods-content  ul li p{
+    margin-bottom: 8px;
+    font-size: 12px;
+    
+ } 
+
+ .favgoods-content  ul li span{
+    font-size: 15px;
+    
+ } 
+
+.favgoods-detail div:first-child{
+    display: flex;
+}
+
+.favgoods-detail .discount {
+    color: #5eb69c;
+    border: 1px solid  #5eb69c;
+    width: 20px;
+    height: 40px;
+    margin-right: 5px;
+    /* writing-mode: vertical-rl;
+    text-orientation: upright; */
+    font-size: 10px;
+    text-align: center;
+ }
+
+.favgoods-detail .discount  p{
+    margin-bottom: 0px;
+}
+/* 收藏商品 end */

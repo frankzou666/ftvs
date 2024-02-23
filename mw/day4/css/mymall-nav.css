@@ -1,0 +1,50 @@
+.mymall-nav{
+    height: 215px;
+    background-color:#fff;
+}
+
+.mymall-nav ul {
+    display: flex;
+    align-items: center;
+    padding: 30px 0 27px 0;
+    justify-content: space-between;
+}
+
+.mymall-nav ul li a {
+    color: #333;
+    font-size: 17px;
+    font-weight: 550;
+}
+.mymall-nav ul li img{
+    width: 140px;
+}
+
+.mymall-nav ul li:last-child {
+    display: flex;
+}
+.mymall-nav ul li .search {
+    width: 160px;
+    border-bottom: 1px solid rgb(153, 153, 153);
+    display: flex;
+    margin-right: 8px;
+}
+
+.mymall-nav ul li .search i{
+    font-size: 18px;
+    margin-right: 13px;
+}
+
+.mymall-nav ul li .cart i{
+    font-size: 18px;
+}    
+
+.mymall-nav ul li .cart .count{
+    background-color: #ea745e;
+    position: relative;
+    top:-12px;
+    left: -4px;
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 9px;
+    color: white;
+}    

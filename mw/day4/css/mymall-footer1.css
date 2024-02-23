@@ -1,0 +1,177 @@
+.mymall-footer1{
+    height: 290px;
+    background-color:#fff;
+}
+
+.mymall-footer1 .footer-icon{
+    width: 100px;
+    height: 100px;
+    border: 1px solid  #f6f6f6;
+    margin-right: 15px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+
+}
+
+.mymall-footer1 .wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-top: 40px;
+}
+
+.mymall-footer1 .wrapper li {
+    border-right: 1px solid #f6f6f6;
+    height: 190px;
+    padding: 0 40px;
+}
+
+.mymall-footer1 .wrapper li p{
+    font-size: 18px;
+    text-align: center;
+}
+
+.mymall-footer1 .wrapper li .customerService {
+    display: flex;
+    
+}
+
+.mymall-footer1 .wrapper li .customerService .footer-icon .customerService-left {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -500px;
+    background-position-y: -140px;
+    width: 70px;
+    height: 60px;
+    transform: scale(0.6);
+ 
+}
+
+.mymall-footer1 .wrapper li .customerService .footer-icon .customerService-left:hover {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -410px;
+    background-position-y: -140px;
+ 
+}
+.mymall-footer1 .wrapper li .customerService .footer-icon .customerService-right {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -700px;
+    background-position-y: -140px;
+    width: 70px;
+    height: 60px;
+    transform: scale(0.6);
+ 
+}
+
+.mymall-footer1 .wrapper li .customerService .footer-icon .customerService-right:hover {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -600px;
+    background-position-y: -140px;
+    width: 70px;
+    height: 60px;
+ 
+}
+
+
+.mymall-footer1 .wrapper li .customerService .footer-icon p{
+    font-size: 14px;
+    
+}
+
+.mymall-footer1 .wrapper li .careus {
+    display: flex;
+    
+}
+
+.mymall-footer1 .wrapper li .careus .footer-icon p{
+    font-size: 14px;
+    
+}
+
+
+.mymall-footer1 .wrapper li .careus .footer-icon .careus-left {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -500px;
+    background-position-y: -25px;
+    width: 70px;
+    height: 60px;
+    transform: scale(0.6);
+}
+
+.mymall-footer1 .wrapper li .careus .footer-icon .careus-left:hover{
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -410px;
+    background-position-y: -25px;
+}
+
+
+.mymall-footer1 .wrapper li .careus .footer-icon .careus-right {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -700px;
+    background-position-y: -25px;
+    width: 70px;
+    height: 60px;
+    transform: scale(0.6);
+}
+
+
+.mymall-footer1 .wrapper li .careus .footer-icon .careus-right:hover {
+    background-image: url('../xtc/images/sprites.png'); 
+    background-position-x: -600px;
+    background-position-y: -25px;
+
+}
+
+
+.mymall-footer1 .wrapper li .download {
+    display: flex;
+    align-items: center;
+    
+}
+
+.mymall-footer1 .wrapper li .download .footer-icon img{
+    width: 85px;
+    
+}
+
+.mymall-footer1 .wrapper li .download div p {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+.mymall-footer1 .wrapper li .download div a {
+    background-color: #5eb69c;
+    width: 110px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    padding-top: 4px;
+}
+
+.mymall-footer1 .wrapper  .contactus {
+    border-right: 0;
+    text-align: center;
+}
+
+.mymall-footer1 .wrapper  .contactus p {
+    margin-bottom: 40px;
+}
+
+
+
+.mymall-footer1 .wrapper  .contactus h5{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    
+}
+
+.mymall-footer1 .wrapper  .contactus small{
+    font-size: 14px;
+    font-weight: 400;
+}

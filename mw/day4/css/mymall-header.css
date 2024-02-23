@@ -1,0 +1,27 @@
+.mymall-header{
+    height: 53px;
+    background-color: #333;
+}
+
+.mymall-header ul {
+    height: 100%;
+    display: flex;
+    padding-left: 700px;
+    line-height: 53px;
+   
+}
+
+.mymall-header ul li a{
+    border-left: 1px solid rgb(102, 102, 102);
+    padding: 0 8px;
+    color: rgb(220, 220, 220);
+    font-size: 14px;
+}
+
+.mymall-header ul li:first-child  a{
+    border-left: 0px solid #e8e8e8;
+}
+
+.mymall-header ul li:last-child  a i{
+    margin-right: 5px;
+}

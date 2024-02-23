@@ -1,4 +1,5 @@
 
+/* 公共样式 */
 
 body{
     background-color: #f7f7f8;
@@ -9,6 +10,11 @@ body{
     margin-bottom: 10px;
 }
 
+.red {
+    color: red;
+}
+/* 公共样式 end */
+
 .main{
     padding-top: 12px;
     /* 这个bottom就是为防止底部让工具条给override*/
@@ -18,6 +24,7 @@ body{
 
 }
 
+/* 用户信息*/
 .userMsg{
     padding: 15px 0px 15px 15px;
     height: 80px;
@@ -31,7 +38,7 @@ body{
     text-align: center;
     line-height: 30px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 10px;
     background-image: linear-gradient(90deg,red,black);
     color: white;
     flex: 1;
@@ -49,7 +56,140 @@ body{
 
 .userMsg .nav i{
     padding-left: 10px;
+    
 }
+/* 用户信息 end*/
+
+/*货物*/
+.goods{
+    padding: 15px 0px 15px 15px;
+    display: flex;
+ }
+ .goods .pic {
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+    
+ }
+
+ .goods .info {
+    flex:1
+ }
+
+ .goods .info  h5{
+    font-size: 13;
+    color: #262626;
+    font-weight: bold;
+ }
+ .goods .info  p{
+    background-color: #f7f7f8;
+    margin: 5px 0;
+    width: 125px;
+    height: 18px;
+    font-size: 13px;
+ }
+
+ .goods .info  span:last-child{
+    margin-left: 5px;
+ }
+
+ .goods .info  p span{
+    margin-right: 5px;
+ }
+
+ .goods .info  .price{
+    font-size:12px
+ }
+
+ .goods .info  .price .currentPrice i{
+    font-size:18px
+ }
+
+ .goods .info  .price .orginalPrice i{
+    font-size:14px
+ }
+
+ .goods .info  .price .orginalPrice i{
+    font-size:14px;
+    text-decoration: line-through;
+    color:#888
+    
+ }
+
+
+ .goods .count {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+  
+    
+ }
+ .goods .count span{
+    margin-left: 5px;
+ }
+
+/*货物 end*/
+
+/* 其他 */
+.rest{
+    padding: 15px 15px 15px 15px;
+
+}
+
+.rest div {
+    display: flex;
+}
+
+.rest h5{
+    font-size:15px;
+    color: #262626;
+    font-weight: 400;
+}
+.rest div:nth-child(2n+1){
+    justify-content: space-between;
+}
+
+.rest div:nth-child(2){
+    margin: 20px 0;
+
+}
+.rest div:nth-child(2) p{
+    margin-left: 15px;
+    font-size: 13px;
+    color: #888;
+
+}
+
+.rest div p i{
+    margin-left: 10px;
+
+}
+
+/* 其他end */
+
+/* 付款 */
+.pay{
+    padding: 15px 15px 15px 15px;
+}
+
+.pay div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pay h5{
+    font-size:15px;
+    color: #262626;
+    font-weight: 400;
+}
+
+.pay div:nth-child(2){
+    margin: 20px 0;
+}
+
+/* 付款 end*/
+
 
 .toolbar{
     height: 80px;
