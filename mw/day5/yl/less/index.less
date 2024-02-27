@@ -1,0 +1,110 @@
+//out :"../css/"
+
+
+@import "./normalize.less";
+@import "./base.less";
+
+@rootSize: 37.5rem;
+
+body{
+    background-color: #f0f0f0;
+}
+
+
+// mainContent,主内容
+.mainContent{
+    //37.5 就是se的根字号
+  position: relative;  
+  padding-bottom: (50/@rootSize);
+  .banner{
+    .banner-img{
+        li {
+            height: (160/@rootSize);
+            width: 100%;
+        }
+    }
+  }
+
+  .banner-cic {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    top: (140/@rootSize);
+    left: (325/2/@rootSize);
+    height: (5/@rootSize);
+
+    li {
+        margin-right:  (10/@rootSize);
+        a{
+            display: block;
+            height: (10/@rootSize);
+            width:  (10/@rootSize);
+            background-color: red;
+            &:hover{
+                background-color: green;
+            }
+        }
+        
+    }
+  }
+
+//   
+  .title{
+    height: (40/@rootSize);
+    line-height: (40/@rootSize);
+    padding-left: (15/@rootSize); 
+    h4{
+        font-size: (14/@rootSize);
+        color: #3c3c3c;
+    }
+  }
+  //
+  .item{
+    margin-bottom: (10/@rootSize);
+    ul{
+        display: flex;
+        flex-direction: column;
+        li{
+            margin-bottom: (5/@rootSize);
+            .pic{
+                height: (160/@rootSize);
+            }
+            .txt{
+                background-color: #fff;
+                padding: (10/@rootSize) (15/@rootSize);
+            }
+
+        }
+    }
+   
+  }
+
+  
+}
+
+
+//footer工具体
+footer{
+    height: (50/@rootSize);
+    width: 100%;
+    background-color: #FECa49;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    ul {
+        display: flex;
+        li{
+            width: 100%;
+            border: 1px solid red;
+            a{
+                height: (50/@rootSize);
+                display: block;
+            }
+            a:hover{
+                background-color: green;
+            }
+
+        }
+    }
+
+}

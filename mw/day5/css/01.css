@@ -1,0 +1,7 @@
+body .box1 {
+  background-color: red;
+  width: 1rem;
+}
+body .box1:hover {
+  background-color: green;
+}

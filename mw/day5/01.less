@@ -1,0 +1,19 @@
+//out:./css/
+
+//可以less文件中定义这个文编译的位置
+
+
+//导入一个less
+@import "./base.less";
+//定义变量，记得有个 ";"
+@myclolor:green;
+
+
+body {
+    .box1{
+        //使用变量
+        &:hover{
+            background-color: @myclolor;
+        }
+    }
+}
