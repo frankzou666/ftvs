@@ -6,6 +6,8 @@
 
 @rootSize: 37.5rem;
 
+// @rootSize: (375/100vw);
+
 body{
     background-color: #f0f0f0;
 }
@@ -64,14 +66,71 @@ body{
     ul{
         display: flex;
         flex-direction: column;
+        //主内容卡片列表
         li{
             margin-bottom: (5/@rootSize);
             .pic{
+                position: relative;
                 height: (160/@rootSize);
+                // 收藏标签
+                .favicon{
+                    position: absolute;
+                    top:(15/@rootSize);
+                    right: (18/@rootSize);
+                    font-size: (24/@rootSize);
+                    color: #fff;
+
+
+                }
+                //活动区域
+                .active {
+                    width: (68/@rootSize);
+                    height: (29/@rootSize);
+                    position: absolute;
+                    top:(-4/@rootSize);
+                    left: (15/@rootSize);
+                    background-image: url("../images/status_active.png");
+                    background-size: contain;
+                    font-size: (12/@rootSize);
+                    color: #fff;
+                    text-align: center;
+                    line-height: (25/@rootSize);
+                    &.stop {
+                        background-image: url("../images/status_default.png");
+                    }
+                }
+               
             }
             .txt{
                 background-color: #fff;
                 padding: (10/@rootSize) (15/@rootSize);
+                .top{
+                    display: flex;
+                    justify-content: space-between;
+                    h5{
+                        font-size: (15/@rootSize);
+                        font-weight: 400;
+                        width: (290/@rootSize);
+
+                    }
+                    p{
+                        font-size: (12/@rootSize);
+                        
+                        color: red;
+                    }
+                }
+                .bottom{
+                    display: flex;
+                    font-size: (11/@rootSize);
+                    margin-top: (10/@rootSize);
+                    p{
+                        i{
+                            margin-right: (4/@rootSize);
+                        }
+                        margin-right: (15/@rootSize);
+                        color: #ccc;  
+                    }
+                }
             }
 
         }
@@ -83,7 +142,7 @@ body{
 }
 
 
-//footer工具体
+//footer工具栏
 footer{
     height: (50/@rootSize);
     width: 100%;
@@ -95,10 +154,29 @@ footer{
         display: flex;
         li{
             width: 100%;
-            border: 1px solid red;
+            height: (50/@rootSize);
             a{
+                margin: 0 auto;
                 height: (50/@rootSize);
-                display: block;
+                width: (70/@rootSize);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: (12/@rootSize);
+
+                i{
+                    font-size: (22/@rootSize);
+                }
+                p{
+                    margin-top: (6/@rootSize);;
+                }
+                color: #fff;
+                &.current{
+                    color: red;
+                }
+
+                
             }
             a:hover{
                 background-color: green;

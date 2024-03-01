@@ -1,0 +1,22 @@
+.header-item-01 {
+    display:  flex;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.header-item-01 .title{
+    color: #333;
+
+}
+
+
+.header-item-01 .more{
+    color: #666;
+}
+
+
+.header-item-01 .more:hover{
+    text-decoration: underline;
+}

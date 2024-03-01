@@ -13,3 +13,23 @@
     width: 982px;
     margin: 0 auto;
 }
+
+.btn_sprite {
+    display:inline-block;
+    background: url("./imgs/btn_sprit.png") no-repeat;
+}
+
+.btn_type_01_super{
+    background-position: right -100px;
+    padding-right: 5px;
+    line-height: 31px;
+
+}
+
+.btn_type_01_sub{
+
+    background-position: 0 -59px;
+    padding-left: 3px;
+    line-height: 31px;
+
+}
