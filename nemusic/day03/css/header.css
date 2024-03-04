@@ -20,3 +20,59 @@
 .header-item-01 .more:hover{
     text-decoration: underline;
 }
+
+/* header类型2 */
+
+.header_type_02{
+    height: 35px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 35px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #c10d0c;
+    background: url("../css/imgs/main_sprite.jpg") no-repeat -225px -148px;
+}
+.header_type_02 .left-area{
+    display:  flex;
+    align-items: center;
+}
+
+.header_type_02 .keyword{
+    display:  flex;
+    font-size: 14px;
+    color: #999;
+    padding-left: 12px;
+}
+
+.header_type_02 .keyword .line{
+    margin: 0 8px;
+}
+
+.header_type_02::after{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 6px;
+    bottom: 11px;
+    background: url("../css/imgs/main_sprite.jpg") no-repeat 0 -237px;
+}
+
+
+.header_type_02 .title{
+    font-size: 20px;
+    font-weight: normal;
+    color: #333;
+}
+
+.header_type_02 .more{
+    font-size: 14px;
+    color: #666;
+}
+
+.header_type_02 .more:hover{
+    text-decoration: underline;
+}

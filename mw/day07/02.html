@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @media (min-width:512px) {
+
+            .box{
+                display: flex;
+            }
+            .box .right {
+                flex: 1;
+            }
+
+        }
+
+        .left{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .right{
+            width: 200px;
+            height: 100px;
+            background-color: black;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    
+</body>
+</html>
