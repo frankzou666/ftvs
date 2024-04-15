@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trns</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+           
+        }
+        .list{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            flex-wrap: wrap;
+            list-style: none;
+            display: flex;
+            overflow: hidden;
+         
+        }
+        li{
+            width: 200px;
+            height: 200px;
+           
+        }
+        .l1{
+            background-color: aqua;
+            
+        }
+        .l2{
+            background-color:skyblue;
+            
+            
+        }
+        .l3{
+            background-color: palegreen;
+           
+        }
+        .l4{
+            background-color: pink;
+            
+        }
+        .l5{
+            background-color: gray;
+            
+        }
+
+        @keyframes myLi {
+            0% { position:static}
+            100% { position:absolute;left: 0px;}
+        }
+
+        @keyframes myLi-i {
+            0% { position:absolute;left: 0px;}
+            100% { position:static}
+            
+        }
+
+
+
+    </style>
+    
+</head>
+<body>
+
+    <ul class="list">
+        <li class="l1">1</li>
+        <li class="l2">2</li>
+        <li class="l3">3</li>
+        <li class="l4">4</li>
+        <li class="l5">5</li>
+    </ul>
+    <div>
+        ok
+    </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded",function(){
+            var liList = document.getElementsByTagName("li")
+            var liListLength = liList.length
+            var i=0;
+
+            setInterval(() => {
+                if (i===0) {
+                    j = liListLength-1;
+                } else {
+                    j =i -1
+                }
+                // liList[j].style.position='static'
+                // liList[j].style.left='0px';
+                // liList[i].style.position='absolute'
+                // liList[i].style.left='0px';
+                liList[j].style.animation="myLi-i 5s" 
+                liList[i].style.animation="myLi 5s linear" 
+                liList[i].style.transition="position 2s"
+
+                i++
+                if (i===liListLength) {
+                    i=0;
+                }
+            }, 5000);
+            
+        })
+        
+    </script>
+    
+</body>
+</html>

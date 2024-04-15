@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+     *{
+        margin: 0;
+        padding: 0;
+     }
+     .item{
+        width: 200px;
+        height: 200px;
+     }
+
+     .main{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        
+        
+     } 
+     .box{
+        width: 800px;
+        height: 200px;
+        display: flex;
+        /* transform: translateX(-600px); */
+        transition: transform 1s linear;
+     }
+     .box1{
+        background-color: red;
+     }
+     .box2{
+        background-color: skyblue
+     }
+
+     .box3{
+        background-color: green
+     }
+     .box4{
+        background-color: yellow
+     }
+
+     
+
+
+     
+ </style>
+
+
+<body>
+        <div class="main">
+            <div class="box" id="box1">
+                <div class="box1 item">1</div>
+                <div class="box2 item">2</div>
+                <div class="box3 item">3</div>
+                <div class="box4 item">4</div>
+            </div>
+
+        </div>
+        
+
+    
+
+    <div class="box5">
+   
+    </div>
+
+
+    <script>
+        window.onload=function() {
+        //     //获取所有item
+        //    var $items = document.getElementsByClassName("item");
+        //    //得到box
+        //    var $box = document.getElementById("box1")
+        //     /* transform: translateX(-600px); */
+        //    $box.style.transform='translateX(-200px);'
+        //    var i=0;
+        //    setInterval(()=>{
+        //     $box.style.transition='all 1s linear' 
+        //     $box.style.transform='translateX(-'+(i*200)+'px)'
+        //     i = i+1;
+        //     if(i>$items.length-1) {
+        //        i=0;
+        //     }
+        //    },1000)
+
+        let = data ={a:1,b:2}
+        let dataStr=''
+        Object.keys(data).forEach(key=>{
+                dataStr=dataStr + key+'='+data[key] + '&'
+        })
+        console.log(dataStr)
+        console.log(dataStr.substring(0,dataStr.lastIndexOf('&')))
+
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,128 @@
+
+.banner {
+    height: 285px;
+    background: url('../css/imgs/banner_bg2.jpg') center center / 6000px;
+
+}
+
+.banner  .area  {
+    height: 285px;
+    position: relative;
+
+}
+
+.banner  .area .area-left{
+    position: relative;
+    width: 730px;
+}
+
+
+.banner .area-left .img-list {
+    width: 730px;
+    display: flex;
+    overflow: hidden;
+}
+
+.banner .area-left .img-list .item{
+    display:  block;
+    flex-shrink: 0;
+    width: 100%;
+   
+}
+
+.banner .area-left .img-list .item a img{
+   height: 285px;
+   width: 100%;
+   
+}   
+
+/* 点的列表 */
+.banner .area-left .cicle-button {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.banner .area-left .cicle-button .item a{
+     display: inline-block;
+     width: 20px;
+     height: 20px;
+     margin: 0 5px;
+     background: url('../css/imgs/banner-sprit.png') 3px -343px;
+}
+
+.banner .area-left .cicle-button .item a:hover {
+     background: url('../css/imgs/banner-sprit.png') -16px -343px;
+}
+.banner .area-left .cicle-button .item.active a{
+     background: url('../css/imgs/banner-sprit.png') -16px -343px;
+}
+
+.banner .area .area-right{
+    position: absolute;
+    right: -1px;
+    top:0px;
+    bottom: 0px;
+    width: 254px;
+    background: url('../css/imgs/banner-download.png') 0 0;
+
+}
+.banner .area .area-right .download-app {
+    display: block;
+    width: 215px;
+    height: 56px;
+    margin: 186px 0 0 19px;
+    text-indent: -9999px;
+}
+
+.banner .area .area-right .download-app:hover {
+    background: url('../css/imgs/banner-download.png') 0 -290px;
+}
+
+.banner .area .area-right  p{
+    color: #8d8d8d;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+   
+}
+
+.banner .area .control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 37px;
+    height: 63px;
+    margin: auto 0 ;
+    background-color: red;
+
+
+}
+
+.banner .area .control-left {
+    left: -70px;
+    background:url('../css/imgs/banner-sprit.png') 0 -360px;
+
+}    
+
+.banner .area .control-left:hover {
+    background:url('../css/imgs/banner-sprit.png') 0 -430px;
+}   
+
+.banner .area .control-right {
+    background:url('../css/imgs/banner-sprit.png') 0 -508px;
+    right: -70px;
+
+}    
+
+.banner .area .control-right:hover {
+    background:url('../css/imgs/banner-sprit.png') 0 -578px;
+
+} 
+
+
+

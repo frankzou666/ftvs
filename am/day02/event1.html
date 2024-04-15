@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .item{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 1px solid black;
+            line-height: 200px;
+            text-align: center;
+            font-size: 60px;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="item">1</div>
+</body>
+<script> 
+  window.onload=function() {
+     var nodes = document.querySelector(".item");
+    nodes.ontouchstart=function(ev) {
+        ev.preventDefault();
+        
+        console.log('touch start')
+    }
+    nodes.ontouchmove=function(ev) {
+        ev.preventDefault();
+        
+        console.log('touch move')
+    }
+    //nodes.addEventListener('touchstart',function(){})
+
+  }
+
+</script>
+</html>

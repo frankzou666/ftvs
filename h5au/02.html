@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            display: flex;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+        .headerSection{
+            height: 100px;
+
+        }
+        .content{
+            flex:1;
+        }
+        .footSection{
+            height: 40px;
+            width: 100%;
+            background-color: #ddd;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="headerSection">this is header
+            <!-- h5的每个标签都可以出现多次，比如可以多次nav等 -->
+            <nav id="navSection">
+                <a href="javascript:;" >首页</a>
+                <a href="javascript:;" >社会责任</a>
+                <a href="javascript:;" >联系我们</a>
+                <a href="javascript:;" >关于我们</a>
+            </nav>
+
+        </header>
+        <!-- 主内容 -->
+        <div class="content">
+
+        </div>
+
+        
+        <footer class="footSection">
+            footer
+        </footer>
+
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 布局基本</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 移动反正没有滚动条，我自己先禁了*/
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        li {}
+
+        #wrap {
+            height: 100%;
+            overflow: hidden;
+            
+        }
+
+        .carousel-wrap {
+            overflow: hidden;
+        
+        } 
+
+       
+
+        .carousel-wrap>ul {
+            position: absolute;
+            overflow: hidden;
+            list-style: none;
+        } 
+
+        .carousel-wrap>ul {
+          
+            overflow: hidden;
+            list-style: none;
+        } 
+
+        .carousel-wrap>ul>li {
+          float: left;
+      } 
+
+        .carousel-wrap>ul>li>a {
+            display: block;
+        }
+
+        .carousel-wrap>ul>li>a>img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="carousel-wrap">
+            <!-- <ul class="list">
+                <li>
+                    <a href="javascript:;" >
+                        <img src="./imgs/01.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" >
+                        <img src="./imgs/02.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" >
+                        <img src="./imgs/03.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" >
+                        <img src="./imgs/04.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" >
+                        <img src="./imgs/05.jpg" alt="">
+                    </a>
+                </li>
+
+            </ul> -->
+
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+
+    window.onload = function () {
+        //禁止所有移动端默认事件行为
+        document.addEventListener("touchstart", function (ev) {
+            ev = ev || event;
+            ev.preventDefault();
+        })
+
+        var arr = ["./imgs/01.jpg", "./imgs/02.jpg", "./imgs/03.jpg", "./imgs/04.jpg", "./imgs/05.jpg"]
+
+        function carousel(arr) {
+            //看全局有不有.carsouel-wrap
+            var carouselWrap = document.querySelector(".carousel-wrap");
+            //如果为空就不执行
+            if (carouselWrap) {
+                var ulNode = document.createElement("ul")
+                var styleNode = document.createElement("style")
+                ulNode.classList.add("list")
+                styleNode.innerHTML= `.carousel-wrap>ul>li {width: `+1/arr.length*100+`%;} 
+                .carousel-wrap>ul {
+                width: `+arr.length+`00%;
+                position: absolute;
+                list-style: none;
+                } 
+                
+                `
+                for(var i=0;i< arr.length;i++) {
+                    ulNode.innerHTML = ulNode.innerHTML +
+                        `
+                         <li>
+                             <a href="javascript:;" >
+                                 <img src="`+arr[i]+`" alt="">
+                             </a>
+                         </li>
+                       `
+                }
+                document.head.appendChild(styleNode)
+                carouselWrap.appendChild(ulNode);
+
+                var imgNods = document.querySelector(".carousel-wrap>ul>li>a>img")
+                setTimeout(()=>{ carouselWrap.style.height=imgNods.offsetHeight+"px"},200)
+
+                //划ul,开始做事件处理,三个事件是什么意思？
+
+                //手指的起始位置
+                var startX = 0;
+
+                //元素的位置
+                var elementX = 0;
+
+                var disX=0
+                var index=0
+                carouselWrap.addEventListener("touchstart",function (ev) { 
+                    ev=ev||event;
+                    var TouchC = ev.changedTouches[0];
+                    startX = TouchC.clientX
+                    elementX = ulNode.offsetLeft
+
+                })
+
+                carouselWrap.addEventListener("touchmove", function (ev) { 
+                    ev=ev||event;
+                    var TouchC = ev.changedTouches[0];
+                    var nowX = TouchC.clientX
+                    disX = nowX - startX
+                    ulNode.style.left = elementX + disX +"px"
+
+                 })
+
+                carouselWrap.addEventListener("touchend",  function (ev) { 
+                    ev=ev||event;
+                    if(disX>0){
+                        index--;
+                    } else if (disX<0) {
+                        index++
+                    }
+                    ulNode.style.left = -index*(document.documentElement.clientWidth)+"px"
+                 })
+
+               
+
+            }
+
+        };
+
+        //调用函数
+        carousel(arr);
+
+
+
+    }
+</script>
+
+</html>

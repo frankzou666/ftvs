@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload=function() {
+        //    document.oncontextmenu=function(ev) {
+        //        var box1 =document.querySelector(".box1");
+        //        box1.style.left=ev.clientX +"px";
+        //        box1.style.top=ev.clientY + "px";
+        //        box1.style.display="block";
+        //        return false;
+               
+        //    }
+
+        //函数自调用 (function() {})()
+        
+        ;(function() {
+            var style = document.createElement("style")
+            var w = document.documentElement.clientWidth/20;
+            style.innerHTML=" html{font-size:"+w+"px!important} ";
+            document.head.appendChild(style);
+        })();
+        //阻止移动的默认行为
+        document.addEventListener("touchstart",function(ev){
+            ev.preventDefault();
+
+        })
+        }
+   </script>
+
+</head>
+  <div class="box1">
+      
+  </div>
+<body>
+    
+
+</body>
+</html>

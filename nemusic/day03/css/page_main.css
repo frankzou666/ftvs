@@ -1,0 +1,360 @@
+
+.main{
+    background-color: #F5F5F5
+}
+
+.main .area{
+    /* height: 500px; */
+    /* background-color: purple; */
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+    background-image: url("./imgs/main-bg1.jpg");
+}
+
+.main .area .area-left{
+    width: 729px;
+    padding: 20px 20px 40px;
+
+}
+.recommend-section-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.recommend-section-item {
+    margin-top: 12px;
+    
+}
+
+.recommend-section-item .recommend-section-item-a{
+    width: 150px;
+    height: 110px;
+    display: inline-block;
+    font-size: 12px;
+}
+.recommend-section-item .recommend-section-item-a img{
+    width: 100%;
+    height: 90px;
+}
+.recommend-section-item .recommend-section-item-a  .pic {
+    position: absolute;
+}
+
+.recommend-section-item .recommend-section-item-a  .pic .count{
+            width: 140px;
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            padding: 0 1px;
+            justify-content: space-between;
+            color: whitesmoke;
+            background-color: rgba(0, 0, 0, 0.4);
+            
+}        
+
+.recommend-section-item .recommend-section-item-a  .pic .count p{
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+
+}
+
+
+.pic .count p i {
+    padding-right: 2px;
+    font-size: 14px;
+}
+
+.pic .count p span {
+    padding-top: 2px;
+}
+
+/* 新碟上架 */
+.disc-section {
+    margin-top: 25px;
+}
+.disc-section .disc-section-content{
+    height: 186px;
+    margin: 20px 0;
+    box-sizing:  border-box;
+    border: 1px solid #d3d3d3;
+
+}
+.disc-section .disc-section-content .disc-section-content-inner{
+    height: 100%;
+    position: relative;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    padding: 0 20px;
+}
+
+.disc-section .disc-section-content .disc-section-content-inner  .disc-section-roller{
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.disc-section .disc-section-content .disc-section-content-inner  .disc-section-roller .list{
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+
+}
+
+.disc-section-content .disc-section-content-inner  .disc-section-roller .list .item{
+    width: 118px;
+    height: 150px;
+    background: url("./imgs/main_sprite.jpg") no-repeat -260px 100px;
+
+}
+.disc-section-content .disc-section-content-inner  .disc-section-roller .list a{
+    font-size: 12px;
+    font-weight: 300;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+.disc-section-content .disc-section-content-inner  .disc-section-roller .list a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.disc-section-content .disc-section-content-inner  .disc-section-roller .list p{
+    font-size: 12px;
+    font-weight: 300;
+    color: gray;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.disc-section-content-inner  .disc-section-roller .list .item .album{
+    position: relative;
+
+}
+
+.disc-section-content-inner  .disc-section-roller .list .item .album .cover{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('./imgs/coverall.png') no-repeat 0 -570px;
+
+}
+
+.disc-section-content-inner  .disc-section-roller .list .item .album:hover  .iconplay{
+    position: absolute;
+    right: 25px;
+    bottom: 5px;
+    width: 22px;
+    height: 22px;
+    background: url('.imgs/iconall.png') no-repeat 0 -80px;
+
+}
+
+.disc-section-content-inner  .control-left{
+    position: absolute;
+    top: 85px;
+    left: 5px;
+    width: 14px;
+    height: 17px;
+
+    background: url('./imgs/main_sprite.jpg') no-repeat -260px -75px;
+}
+
+.disc-section-content-inner  .control-right{
+    position: absolute;
+    top: 85px;
+    right: 5px;
+    width: 17px;
+    height: 17px;
+    background: url('./imgs/main_sprite.jpg') no-repeat -320px -75px;
+    
+}
+
+/* 新碟上架 end*/
+
+
+/* 排行榜 */
+.rank-section .content{
+    display: flex;
+    height: 472px;
+    margin-top:20px;
+    background: url('./imgs/rank-background.png') no-repeat;
+}
+
+.rank-section .content .rank{
+    width: 230px;
+}
+
+.rank-section .content .rank .header{
+    display: flex;
+    height: 120px;
+    padding: 20px 0 0 19px;
+    box-sizing: border-box;
+    
+    
+}
+
+.rank-section .content .rank .header .album{
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+
+}
+.rank-section .content .rank .header .album img{
+    width: 100%;
+    height: 100%;
+}
+
+.rank-section .content .rank .header .album .cover{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background:url('./imgs/coverall.png') no-repeat -145px -57px;
+   }
+
+   .rank-section .content .rank .header  .info {
+     padding: 12px;
+   }
+
+   .rank-section .content .rank .header  .info .title{
+    font-size: 14px;
+    color: #333;
+
+   }
+
+   .rank-section .content .rank .header  .info  .operation{
+    margin-top: 12px;
+   }
+
+   .rank-section .content .rank .header  .info .btn{
+     display: inline-block;
+     width: 22px;
+     height: 22px;
+     background: url("./imgs/main_sprite.jpg") no-repeat;
+   }
+   .rank-section .content .rank .header  .info .btn-play{
+    background-position: -267px -205px;
+    padding-right: 8px;
+
+   } 
+
+   .rank-section .content .rank .header  .info .btn-play:hover{
+    background-position: -267px -235px;
+
+   } 
+
+   .rank-section .content .rank .header  .info .btn-fav{
+    background-position: -300px -205px;
+   }
+
+   .rank-section .content .rank .header  .info .btn-fav:hover{
+    background-position: -300px -235px;
+   }
+
+   .rank-section .content .rank  .up-list .item{
+    display: flex;
+    padding-left: 12px;
+    height: 32px;
+    line-height: 32px;
+   }
+
+   .rank-section .content .rank  .up-list .item .no{
+    width: 35px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+
+   }
+   .rank-section .content .rank  .up-list .item:nth-child(-n+3) .no{
+    color: red;
+
+   }
+
+   .rank-section .content .rank  .up-list .item .song{
+    width: 35px;
+    font-size: 14px;
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+   }
+
+   .rank-section .content .rank  .up-list .item:hover .operation{
+    display: flex;
+   }
+
+   .rank-section .content .rank  .up-list .item .operation{
+    width: 82px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    display: none;
+   }
+
+   .rank-section .content .rank  .up-list .item .btn{
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+    background: url("./imgs/main_sprite.jpg") no-repeat;
+
+   }
+
+   .rank-section .content .rank  .up-list .item .operation .play{
+    background-position: -267px -268px;
+
+   }
+
+   .rank-section .content .rank  .up-list .item .operation .btn.add{
+    background-position: -267px -268px;
+   
+
+   }
+
+   .rank-section .content .rank  .up-list .item .operation .btn.fav{
+    background-position: -297px -268px;
+   
+
+   }
+
+
+
+
+   .rank-section .content .rank  .up-list .item .song:hover{
+    text-decoration: underline;
+   }
+
+   .rank-section .content .rank  .up-list .more{
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    padding-left: 140px ;
+
+   }
+   .rank-section .content .rank  .up-list .more:hover{
+    text-decoration: underline;
+   }
+
+   
+
+
+/* 排行榜  end*/
+
+

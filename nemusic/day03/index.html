@@ -3,14 +3,752 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网易云音乐</title>
+    <title>我的音乐</title>
 
-    <link rel="stylesheet" href="../day03/css/reset.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/header.css">  
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+
+    <!-- 引入页面css -->
+    <link rel="stylesheet" href="./css/page_header.css">  
+    <link rel="stylesheet" href="./css/page_banner.css">  
+    <link rel="stylesheet" href="./css/page_main.css">  
+    <link rel="stylesheet" href="./css/main-area-right.css">
 </head>
 <body>
+    <!-- header -->
+
+    <div class="top">
+        <div class="topbar wrapper_01">
+            <div class="topbar-left">
+                <h1 class="logo-title">
+                    <a href="">网易云音乐</a>
+                </h1>
+                <ul class="list">
+                    <li><a href="#" class="item active">发现音乐</a></li>
+                    <li><a href="#" class="item">我的音乐</a></li>
+                    <li><a href="#" class="item">关注</a></li>
+                    <li><a href="#" class="item">商场</a></li>
+                    <li><a href="#" class="item">音乐人</a></li>
+                    <li><a href="#" class="item download">下载客户端<i class="hotIcon"></i></a></li>
+                </ul>
+            </div>
+            <div class="topbar-right">
+              <div class="search"><input type="text" placeholder="音乐/视视/电台"></div>
+              <div class="author"><a href="">创作者中心</a></div>
+              <div class="login"><a href="">登录</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav"> 
+        <div class="wrapper_01 nabvar">
+            <ul class="list">
+                <li><a href="" class="item active" ><span>推荐</span></a></li>
+                <li><a href="" class="item"><span>排行榜</span></a></li>
+                <li><a href="" class="item"><span>歌单</span></a></li>
+                <li><a href="" class="item"><span>主播电台</span></a></li>
+                <li><a href="" class="item"><span>歌手</span></a></li>
+                <li><a href="" class="item"><span>新手上架</span></a></li>
+            </ul>
+        </div>
+    </div>
     
+    <!--header end-->
+
+    <!-- banner -->
+    <div class="banner">
+        <div class="wrapper_03 area ">
+            <div class="area-left">
+                <ul class="img-list">
+                    <li class="item">
+                        <a href="#">
+                            <img src="../day03/css/imgs/banner1.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img src="../day03/css/imgs/banner2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <img src="../day03/css/imgs/banner1.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="cicle-button">
+                    <li class="item active"><a href=""></a></li>
+                    <li class="item"><a href=""></a></li>
+                    <li class="item"><a href=""></a></li>
+                    <li class="item"><a href=""></a></li>
+                    <li class="item"><a href=""></a></li>
+                </ul>
+            </div>
+            <div class="area-right">
+                 <a class="download-app" href="#">下载</a>
+                 <p>PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+
+            </div>
+            <a class="control control-left" href="#"></a>
+            <a class="control control-right" href="#"></a>
+        </div>
+
+
+    </div>
+
+    <!-- banner end -->
+
+    <!-- main -->
+    <div class="main">
+        <div class="area wrapper_02">
+            <div class="area-left">
+                <!--热门推荐  -->
+                <div class="recommend-section">
+                    <div class="header_type_02">
+                        <div class="left-area">
+                            <h2 class="title">热门推荐</h2>
+                            <ul class="keyword">
+                                <li class="item"><a href="">华语<i></i></a></li>
+                                <li class="line">｜</li>
+                                <li class="item"><a href="">流行<i></i></a></li>
+                                <li class="line">｜</li>
+                                <li class="item"><a href="">摇滚<i></i></a></li>
+                                <li class="line">｜</li>
+                                <li class="item"><a href="">民谣<i></i></a></li>
+                                <li class="line">｜</li>
+                                <li class="item"><a href="">电子<i></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="right-area"><a class="more" href="">更多</a></div>
+                    </div>
+                    <div class="recommend-section-list">
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         <div class="recommend-section-item">
+                            <a  class="recommend-section-item-a" href="">
+                                <img src="../day03/imgs/item1.webp" alt="">
+                                <div class="pic">
+                                   <div class="count">
+                                     <p><i class="iconfont icon_shipin_bofangshu"></i><span>10</span><span>万</span></p>
+                                     <p><i class="iconfont icon_shipin_danmushu"></i><span>1</span><span>万</span></p>
+                                   </div>
+                                </div>
+                                <div class="txt">你活着补就是你你是你是</div>
+                             </a>
+                         </div>
+                         
+                    </div>
+                </div>
+
+                <!-- 新碟上架 -->
+     
+                <div class="disc-section">
+                    <div class="header_type_02">
+                        <div class="left-area">
+                            <h2 class="title">新碟上架</h2>
+                        </div>
+                        <div class="right-area"><a class="more" href="">更多</a></div>
+                    </div>
+                    <div class="disc-section-content">
+                        <div class="disc-section-content-inner">
+                            <div class="disc-section-roller">
+                                <ul class="list">
+                                   <li class="item">
+                                     <div class="album">
+                                         <img src="./imgs/alumb1.jpeg" alt="">
+                                         <a class="cover" href=""></a>
+                                         <a class="iconplay" ></a>
+                                     </div>
+                                      <a href="">岛与黎明</a>
+                                      <p>盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西盘尼西林盘尼西林</p>
+                                   </li>
+                                   <li class="item">
+                                    <div class="album">
+                                        <img src="./imgs/alumb1.jpeg" alt="">
+                                        <a class="cover" href=""></a>
+                                        <a class="iconplay" ></a>
+                                    </div>
+                                     <a href="">岛与黎明</a>
+                                     <p>盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西盘尼西林盘尼西林</p>
+                                  </li>
+                                  <li class="item">
+                                    <div class="album">
+                                        <img src="./imgs/alumb1.jpeg" alt="">
+                                        <a class="cover" href=""></a>
+                                        <a class="iconplay" ></a>
+                                    </div>
+                                     <a href="">岛与黎明</a>
+                                     <p>盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西盘尼西林盘尼西林</p>
+                                  </li>
+                                  <li class="item">
+                                    <div class="album">
+                                        <img src="./imgs/alumb1.jpeg" alt="">
+                                        <a class="cover" href=""></a>
+                                        <a class="iconplay" ></a>
+                                    </div>
+                                     <a href="">岛与黎明</a>
+                                     <p>盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西盘尼西林盘尼西林</p>
+                                  </li>
+                                  <li class="item">
+                                    <div class="album">
+                                        <img src="./imgs/alumb1.jpeg" alt="">
+                                        <a class="cover" href=""></a>
+                                        <a class="iconplay" ></a>
+                                    </div>
+                                     <a href="">岛与黎明</a>
+                                     <p>盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西林盘尼西盘尼西林盘尼西林</p>
+                                  </li>
+
+                                 
+                                </ul>
+                                <ul class="list">2</ul>
+                                <ul class="list">3</ul>
+
+                            </div>
+
+                            <a href="" class="control-left"></a>
+                            <a href="" class="control-right"></a>
+
+                        </div>
+
+                    
+                    
+                    </div>
+
+                </div>
+                <!-- 新碟上架 end  -->
+                
+                <!-- 榜单 -->
+                <div class="rank-section">
+                    <div class="header_type_02">
+                        <div class="left-area">
+                            <h2 class="title">榜单</h2>
+                        </div>
+                        <div class="right-area"><a class="more" href="">更多</a></div>
+                    </div>
+
+                    <div class="content">
+                        <dl class="rank rank-up">
+                            <dt class="header">
+                                 <div class="album">
+                                    <img src="../day02/css/imgs/rank-cover1.jpeg" alt="">
+                                    <a href="" class="cover"></a>
+                                 </div>
+                                 <div class="info">
+                                    <h3 class="title">飙升榜</h3>
+                                    <div class="operation">
+                                        <a href="#"  class="btn btn-play"></a>
+                                        <a href="#"  class="btn btn-fav"></a>
+                                    </div>
+                                 </div>
+                                 
+                            </dt>
+                            <dd class="list up-list">
+                                <ol>
+                                    <li class="item">
+                                        <span class="no">1</span>
+                                        <a href="href" class="song">流浪流浪流</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">2</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">3</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">4</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">5</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">6</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">7</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">8</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">9</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">10</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+
+                                </ol>
+                                
+                                <a href="#" class="more">查看全部&nbsp;&nbsp;&gt;</a>
+                            </dd>
+                        </dl>
+
+                        <dl class="rank rank-up">
+                            <dt class="header">
+                                 <div class="album">
+                                    <img src="../day02/css/imgs/rank-cover1.jpeg" alt="">
+                                    <a href="" class="cover"></a>
+                                 </div>
+                                 <div class="info">
+                                    <h3 class="title">飙升榜</h3>
+                                    <div class="operation">
+                                        <a href="#"  class="btn btn-play"></a>
+                                        <a href="#"  class="btn btn-fav"></a>
+                                    </div>
+                                 </div>
+                                 
+                            </dt>
+                            <dd class="list up-list">
+                                <ol>
+                                    <li class="item">
+                                        <span class="no">1</span>
+                                        <a href="href" class="song">流浪流浪流</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">2</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">3</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">4</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">5</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">6</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">7</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">8</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">9</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">10</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+
+                                </ol>
+                                
+                                <a href="#" class="more">查看全部&nbsp;&nbsp;&gt;</a>
+                            </dd>
+                        </dl>
+
+
+                        <dl class="rank rank-up">
+                            <dt class="header">
+                                 <div class="album">
+                                    <img src="../day02/css/imgs/rank-cover1.jpeg" alt="">
+                                    <a href="" class="cover"></a>
+                                 </div>
+                                 <div class="info">
+                                    <h3 class="title">飙升榜</h3>
+                                    <div class="operation">
+                                        <a href="#"  class="btn btn-play"></a>
+                                        <a href="#"  class="btn btn-fav"></a>
+                                    </div>
+                                 </div>
+                                 
+                            </dt>
+                            <dd class="list up-list">
+                                <ol>
+                                    <li class="item">
+                                        <span class="no">1</span>
+                                        <a href="href" class="song">流浪流浪流</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">2</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">3</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">4</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">5</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">6</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">7</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">8</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">9</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <span class="no">10</span>
+                                        <a href="href" class="song">流浪流浪流浪流浪流浪流浪流浪</a>
+                                        <div class="operation">
+                                             <a href="#" class="btn play"></a>
+                                             <a href="#" class="btn add"></a>
+                                             <a href="#" class="btn fav"></a>
+                                        </div>
+                                    </li>
+
+                                </ol>
+                                
+                                <a href="#" class="more">查看全部&nbsp;&nbsp;&gt;</a>
+                            </dd>
+                        </dl>
+
+                    </div>
+                    
+                </div>
+                <!-- 榜单 end-->
+               
+            </div>
+            <div class="area-right">
+                <div class="user-login">
+                    <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
+                    <a class="loginBtn"  href="">用户登录</a>
+                </div>
+                <div class="settle-singer">
+                    <div class="header-item-01">
+                        <h3 class="title">入驻歌手</h3>
+                        <a href="#" class="more">查看全部&gt;</a>
+                    </div>
+                    <ul class="list">
+                        <li><a class="item"  herf="#">
+                            <div class="album"> 
+                                <img src="../day02/css/imgs/mei.jpeg" alt="">
+                            </div>
+                            <div class="info"> 
+                                <div class="singer">张惠妹aMEI</div>
+                                <div class="desc">台湾歌手张惠妹台湾歌手张惠妹台湾歌手张惠妹</div>
+                            </div>
+
+                        </a></li>
+                        <li><a class="item"  herf="#">
+                            <div class="album"> 
+                                <img src="../day02/css/imgs/mei.jpeg" alt="">
+                            </div>
+                            <div class="info"> 
+                                <div class="singer">张惠妹aMEI</div>
+                                <div class="desc">台湾歌手张惠妹ewdf</div>
+                            </div>
+
+                        </a></li>
+                        <li><a class="item"  herf="#">
+                            <div class="album"> 
+                                <img src="../day02/css/imgs/mei.jpeg" alt="">
+                            </div>
+                            <div class="info"> 
+                                <div class="singer">张惠妹aMEI</div>
+                                <div class="desc">台湾歌手张惠妹</div>
+                            </div>
+
+                        </a></li>
+                        <li><a class="item"  herf="#">
+                            <div class="album"> 
+                                <img src="../day02/css/imgs/mei.jpeg" alt="">
+                            </div>
+                            <div class="info"> 
+                                <div class="singer">张惠妹aMEI</div>
+                                <div class="desc">台湾歌手张惠妹</div>
+                            </div>
+
+                        </a></li>
+                        <li><a class="item"  herf="#">
+                            <div class="album"> 
+                                <img src="../day02/css/imgs/mei.jpeg" alt="">
+                            </div>
+                            <div class="info"> 
+                                <div class="singer">张惠妹aMEI</div>
+                                <div class="desc">台湾歌手张惠妹</div>
+                            </div>
+
+                        </a></li>
+                    </ul>
+
+                </div>
+                <div class="hot-anchor">
+                    <div class="header-item-01">
+                        <h3 class="title">热门主播</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!-- main end -->
 </body>
 
-<iframe src="../day03/top.html" frameborder="0" style="width: 100%; height: 105px;"></iframe>
-<iframe src="../day03/banner.html" frameborder="0" style="width: 100%; height: 285px;"></iframe>
+
 </html>

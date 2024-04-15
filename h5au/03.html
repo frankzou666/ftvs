@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myMeter{
+            height: 40px;
+            border: 0px;
+           ::-webkit-meter-suboptimum-value {
+            }
+        }
+
+        #myProgress{
+           height: 40px;
+           width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="03">
+        <!-- <meter value="0.5"  optimum="0.6" low="0.3" id="myMeter"></meter> -->
+ 
+        <!-- 进度条，value表示当前值 -->
+        <progress value="1" id="myProgress">1</progress>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            padding: 0;
+            margin: 0;
+         }
+         .box1{
+            width: (37.5/37.5)rem;
+            height: 1rem;
+            background-color: red;
+         }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        1
+    </div>
+
+
+</body>
+<script>
+    //设置fontsize
+    //  var html=document.querySelector("html")
+    //  html.style.fontSize = document.documentElement.clientWidth/16+'px'
+
+    var styleNode = document.createElement("style");
+    var w = document.documentElement.clientWidth/10;
+    styleNode.innerHTML="html {font-size:"+w+"px !important}"
+    document.head.appendChild(styleNode);
+
+</script>
+</html>

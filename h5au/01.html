@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左右开关效果</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .swithOuter{
+            position: relative;
+            width: 60px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+
+        }
+        .swithOuter .innOuter{
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            background-color: rgb(236, 236, 231);
+    
+            transition: transform 0.4s
+            /* transform: translateX(30px); */
+        }
+        .backText{
+            position: absolute;
+            top:0px;
+            left:21px;
+            width: 20px;
+            height: 20px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="swithOuter" id="swithOuter">
+         
+        <span class="innOuter" id="innOuter"></span>
+        <span class="backText" id="backText">xxx</span>
+
+    </div>
+    
+    <script>
+        (function() {
+           var $swithOuter=document.getElementById("swithOuter")
+           var $innOuter=document.getElementById("innOuter")
+           var $backText=document.getElementById("backText")
+           $innOuter.addEventListener('click',function(){
+            if ($innOuter.style.transform!=='translateX(40px)'){
+                $innOuter.style.transform='translateX(40px)'
+            } else {
+                $innOuter.style.transform='translateX(00px)'
+            }
+           })
+
+           $swithOuter.addEventListener('click',function(){
+            if ($innOuter.style.transform!=='translateX(41px)'){
+                $swithOuter.style.backgroundColor="green"
+                $innOuter.style.transform='translateX(41px)'
+                $backText.innerHTML="abc"
+            } else {
+                $innOuter.style.transform='translateX(00px)'
+                $swithOuter.style.backgroundColor="#fff"
+                $backText.innerHTML="xxx"
+            }
+           })
+          
+
+
+
+        })()
+   </script>
+</body>
+</html>

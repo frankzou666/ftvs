@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .gg{
+            position: relative;
+            width: 100%;
+        }
+        .cv{
+            width: 100px;
+            margin: 0 auto;
+            position: relative;
+            top: -60px;
+            left:-60px;
+            border-radius: 10px;
+
+        }
+        .lucky{
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 100px;
+            width: 100px;
+            border-radius: 10px;
+
+        }
+        .mycv{
+            position: absolute;
+            left: 0;
+            top: -10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gg">
+        <div class="lucky">中奖了</div>
+        <div class="cv">
+             <canvas id="mycv"></canvas> 
+        </div>
+
+    </div>
+    
+
+    <script>
+        window.addEventListener("DOMContentLoaded",function() {
+            var myCanvas = document.getElementById("mycv")
+            var ctx =  myCanvas.getContext("2d")
+            var isClick;
+            if (myCanvas.getContext("2d")) {
+                
+                ctx.lineWidth=10
+                ctx.fillStyle="gray"
+                // ctx.moveTo(10,10)
+                //开始画线
+                // ctx.lineTo(100,10)
+                ctx.stroke()
+                ctx.fillRect(0,0,200,100)
+
+            }
+
+            myCanvas.ontouchstart=function(){
+                isClick=true
+            }
+
+            myCanvas.ontouchend=function(){
+                console.log("ok")
+                isClick=false
+            }
+
+            myCanvas.ontouchmove=function(e){
+                if (isClick) {
+                    ctx.beginPath()
+                    ctx.strokeStyle="gray"
+                    let x = e.offsetX-myCanvas.offsetLeft
+                    let y = e.offsetY-myCanvas.offsetTop
+                    ctx.globalCompositeOperation='destination-out'
+                    ctx.arc(x,y,10,0,Math.PI*2)
+                    ctx.fill()
+                    ctx.closePath()
+
+                }
+                
+
+            }
+        })
+    </script>
+    
+</body>
+</html>
