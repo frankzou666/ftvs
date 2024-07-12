@@ -21,6 +21,7 @@ window.onload=function() {
     console.log(typeof(fun1) )  //function
     console.log(typeof(arr)) //object
     console.log((arr instanceof Object)) //true
+    console.log((b==Object)) //true
     console.log((a instanceof Number)) //为什么是false?
     
 }

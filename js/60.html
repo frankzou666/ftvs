@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script crossorigin="anonymous">
-        let img=document.createElement('img');
-        img.src= '1.png';
-        //如果加载成功了，就放到页面，如果不成功则报错
-        img.onload = function(){
-            document.body.append(img);
-        }
-        img.onerror =function() {
-            alert('i can not load gif...');
-        }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script >
+        const socket = io.connect("http://127.0.0.1:8080/interfacecheck");
+    
+        const namespace = '/ws'
+        // 连上服务器
+       // const socket = io.connect("http://" + document.domain + ":" + location.port + namespace);
+
+        // 发送message 消息
+        socket.emit("message",{"data":"hello world!"});
+
+        // 收到数据后,执行输出
+        socket.on('response', function(recv) {
+            console.log('hello： ' + recv.data)
+        });
+    
+        
     </script>
 </head>
 <body>

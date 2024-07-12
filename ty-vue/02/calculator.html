@@ -17,6 +17,10 @@
         
         <p>{{result}}</p>
         <p style="color: red;">{{msg}}</p>
+        <p v-text="price"></p>
+        <Mycomp></Mycomp>
+        
+        <depcom></depcom>
 
     </div>
     
@@ -26,14 +30,35 @@
             return isNaN(value) || !isFinite(value);
         };
 
+        //全局组件
+        Vue.component('Mycomp',{
+            template:`<h1>this is 2</h1>`,
+            //组件中的data,必须是一个函数，而不能是一个对像,必须要返回对像； 
+            data(){
+             return {}
+            }
+        })
+
+        //局部组件
+        const depCom = {
+            template:`<h1>this is 局部组件1</h1>`,
+            data(){
+             return {}
+            }
+        }
         const vm= new Vue({
             el:"#app",
+            
             data:{
                 inputValueX: 0,
                 inputValueY: 0,
                 result : 0,
                 msg:""
   
+            },
+            //局部组件命字要小写
+            components:{
+                'depcom':depCom,
             },
             methods: {
                 calResult:function() {
@@ -46,6 +71,18 @@
                     this.result = parseFloat(this.inputValueX) +  parseFloat(this.inputValueY);
                     this.msg = "";
         
+                }
+            },
+            computed:{
+                price:function (){
+                    return parseFloat(this.inputValueX)+1;
+
+                },
+            },
+            //  过滤器
+            filters:{
+                genderFilter(val){
+                    return 'good'
                 }
             }
 

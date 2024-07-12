@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvans 28</title>
+    <style>
+        #firstCan{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="firstCan"> my canvas</canvas>
+
+    <script>
+         (function(){
+            //获取对像
+             var myCanvas = document.getElementById('firstCan')
+             //设置属性
+             myCanvas.width=400;
+             myCanvas.height=600;
+             //获取画笔
+             var ctx = myCanvas.getContext('2d');
+             //可以画图了
+             ctx.moveTo(0,0)
+             ctx.lineTo(100,100)
+             //描边
+             ctx.stroke()
+
+
+
+         })()
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvans 29</title>
+    <style>
+        #firstCan{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="firstCan"> my canvas</canvas>
+
+    <script>
+         (function(){
+            //获取对像
+             var myCanvas = document.getElementById('firstCan')
+             myCanvas.width=800
+             myCanvas.height=600
+        
+             var ctx = myCanvas.getContext('2d');
+             ctx.lineWidth=5
+             ctx.beginPath()
+             //可以画图了
+             ctx.moveTo(10,10)
+             ctx.lineTo(100,100)
+             ctx.lineTo(10,200)
+             ctx.closePath() //闭合路么，把路径最后一个点和起点连起来，绘制封闭的路径图形，最后一步交给closePath()
+             //描边
+             ctx.fill()
+
+
+
+         })()
+    </script>
+    
+</body>
+
+</html>

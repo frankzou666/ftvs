@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvans 36签字板</title>
+    <style>
+        #firstCan{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="firstCan"> my canvas</canvas>
+    <button id="btn"> clear</button>
+
+    <script>
+         (function(){
+            //获取对像
+             var myCanvas = document.getElementById('firstCan')
+             var btn = document.getElementById('btn')
+             myCanvas.width=800
+             myCanvas.height=600
+
+             var ctx = myCanvas.getContext('2d')
+
+             //有一个号事件中绑定另一个事件
+             myCanvas.onmousedown=function(evt){
+                //
+                ctx.beginPath();
+                //获取mount当前的点
+                let X = evt.offsetX
+                let Y = evt.offsetY
+                //移动位置
+                ctx.moveTo(X,Y) 
+                myCanvas.onmousemove=function(evt){
+                    let X = evt.offsetX
+                    let Y = evt.offsetY
+                    ctx.lineWidth=10
+                    ctx.lineTo(X,Y) 
+                    ctx.stroke()
+                }
+
+             }
+
+             //mouse抬起事件,把之前的事件解除就可以
+             myCanvas.onmouseup=function(evt){
+                myCanvas.onmousemove = null
+
+             }
+             //重新设置宽高，就可以清空画布
+             btn.onclick=function(evt){
+                myCanvas.width=800
+                myCanvas.height=600
+             }
+
+
+
+
+        
+            
+             
+         })()
+    </script>
+    
+</body>
+
+</html>
