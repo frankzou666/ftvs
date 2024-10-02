@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02</title>
+    <script>
+        
+        var person=(function(){
+            var username="smith"
+            var showname = function() {
+                return username
+            } 
+            return {showname:showname}
+        })();
+
+        console.log(person.showname())
+        console.log(person)
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

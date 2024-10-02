@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="../vue274.js"></script>
+
+</head>
+<body>
+
+    <div id="app">
+        
+        
+
+    </div>
+    
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data() {
+                return {
+                    name:'frank'
+                }
+            },
+            template:`<h1>this is from templag {{name}}</h1>`,
+            methods:{
+                showHello:function(){
+                     alert('hello')
+                }
+
+            }
+        })
+
+    </script>
+</body>
+</html>

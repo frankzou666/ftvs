@@ -1,0 +1,1 @@
+single page web applicaton(javascript end-to-end)

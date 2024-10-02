@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02</title>
+    <script>
+        var person = {
+            name: 'smith',
+            age: 10
+        }
+
+        // factory function
+        var makePerson = function (name, age) {
+            var object = Object.create(person);
+            object.name = name;
+            object.age = age;
+            return object;
+        }
+
+        var person1 = makePerson('frank', 10)
+        var person2 = makePerson('frank1', 20)
+        person1.id = 999
+        console.log(person1.id) //find at object directly ,ouput 999
+        
+        console.log(person1.id2)  //can not fined directly ,and prototype object ,output undefined
+
+        person.id2 = 9999 //assignment a variable to prototype , output is 99999
+
+        console.log(person1.__proto__);  //output the prototype of object.
+
+        console.log(person1.__proto__.__proto__);  //output the prototype's prototype of object. is Object
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
